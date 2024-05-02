@@ -96,8 +96,9 @@ unset use_color safe_term match_lhs sh
 #alias free='free -m'                      # show sizes in MB
 #alias np='nano -w PKGBUILD'
 #alias more=less
+alias cp='rsync -avP'
 
-xhost +local:root > /dev/null 2>&1
+#xhost +local:root > /dev/null 2>&1
 
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when

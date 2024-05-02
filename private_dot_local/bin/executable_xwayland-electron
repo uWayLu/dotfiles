@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+/usr/bin/${0##*/} \
+	--ozone-platform=x11 \
+	"$@"
+

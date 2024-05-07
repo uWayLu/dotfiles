@@ -1,0 +1,2 @@
+#!/usr/bin/zsh
+$HOME/Workspace/proxyscotch/out/linux-server/proxyscotch-server-linux-amd64-v0.1.1 --verify-sslcert=false "$@"

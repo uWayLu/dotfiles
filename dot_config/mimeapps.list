@@ -1,0 +1,7 @@
+
+[Default Applications]
+x-scheme-handler/msteams=teams-for-linux.desktop
+x-scheme-handler/mailto=brave-browser.desktop
+hoppscotch=hoppscotch-handler.desktop
+application/pdf=org.gnome.Evince.desktop
+

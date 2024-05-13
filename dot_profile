@@ -5,7 +5,7 @@ return
 # Work in progress...
 
 # make default editor Helix
-export EDITOR=helix
+export EDITOR=vim
 
 # Most pure GTK3 apps use wayland by default, but some,
 # such as Firefox, require the backend to be explicitly selected.

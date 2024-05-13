@@ -113,3 +113,5 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
+export PATH=/home/ywl/.local/bin:/home/ywl/bin:/home/ywl/.nvm/versions/node/v20.5.1/bin:/home/ywl/miniconda3/bin:/home/ywl/miniconda3/condabin:$PATH
+source utils.sh

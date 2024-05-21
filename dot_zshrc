@@ -13,3 +13,4 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/nvm/init-nvm.sh

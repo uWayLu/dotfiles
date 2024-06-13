@@ -1,0 +1,3 @@
+#!/bin/sh
+$BROWSER --app="https://teams.microsoft.com/v2/?culture=zh-tw&country=tw&clientexperience=t2" "$@"
+

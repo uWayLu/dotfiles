@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+export PATH=$PATH:/opt/android-sdk/platform-tools
+echo $PATH
 
 PORT=5556
 DEVICE=localhost:$PORT

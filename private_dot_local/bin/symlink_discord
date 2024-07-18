@@ -1,1 +1,3 @@
-/home/ywl/.local/bin/wayland-chromium
+#!/bin/bash
+#/home/ywl/.local/bin/wayland-chromium
+hyprctl dispatch exec discord "$@"

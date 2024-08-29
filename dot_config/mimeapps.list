@@ -1,7 +1,10 @@
-
 [Default Applications]
 x-scheme-handler/msteams=teams-for-linux.desktop
 x-scheme-handler/mailto=brave-browser.desktop
 hoppscotch=hoppscotch-handler.desktop
 application/pdf=org.gnome.Evince.desktop
 video/MP2T=mpv.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+
+[Added Associations]
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;

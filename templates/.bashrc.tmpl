@@ -1,0 +1,11 @@
+# Include common settings
+{{ .chezmoi.data.common.bashrc | indent 2 }}
+
+{{ if eq .chezmoi.os "linux" }}
+# Linux-specific settings
+{{ .chezmoi.data.linux.bashrc | indent 2 }}
+{{ else if eq .chezmoi.os "darwin" }}
+# macOS-specific settings
+{{ .chezmoi.data.macos.bashrc | indent 2 }}
+{{ end }}
+

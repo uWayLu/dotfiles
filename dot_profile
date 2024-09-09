@@ -1,6 +1,9 @@
 #!/bin/sh
 export XDG_CONFIG_HOME=$HOME/.config
 
+return
+# Work in progress...
+
 # make default editor Helix
 export EDITOR=helix
 

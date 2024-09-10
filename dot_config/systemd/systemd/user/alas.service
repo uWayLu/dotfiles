@@ -1,0 +1,11 @@
+[Unit]
+Description=AzurLaneAutoScript
+
+[Service]
+Type=simple
+ExecStart=/home/ywl/miniconda3/envs/alas/bin/python /home/ywl/Workspace/AzurLaneAutoScript/gui.py
+WorkingDirectory=/home/ywl/Workspace/AzurLaneAutoScript
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

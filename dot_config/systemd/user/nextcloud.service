@@ -1,0 +1,12 @@
+# Copy and paste this. I got this from https://zubairabid.com/spotifyd.html
+[Unit]
+Description=Launch Nextcloud Client
+Documentation=https://docs.nextcloud.com/desktop/latest/
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/nextcloud --background
+
+[Install]
+WantedBy=default.target

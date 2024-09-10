@@ -1,0 +1,17 @@
+# Copy and paste this. I got this from https://zubairabid.com/spotifyd.html
+[Unit]
+Description=A spotify playing daemon
+Documentation=https://github.com/Spotifyd/spotifyd
+Wants=sound.target
+After=sound.target
+Wants=network-online.target
+After=network-online.target
+PartOf=pulseaudio.service
+
+[Service]
+ExecStart=/usr/bin/spotifyd --no-daemon
+Restart=never
+RestartSec=12
+
+[Install]
+WantedBy=default.target

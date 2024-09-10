@@ -1,0 +1,25 @@
+### Editing /home/ywl/.config/systemd/user/foot-server.service.d/override.conf
+### Anything between here and the comment below will become the contents of the drop-in file
+
+
+
+### Edits below this comment will be discarded
+
+
+### /etc/xdg/systemd/user/foot-server.service
+# [Unit]
+# Requires=%N.socket
+# Description=Foot terminal server mode
+# Documentation=man:foot(1)
+# PartOf=wayland-session.target
+# After=wayland-session.target
+# 
+# [Service]
+# ExecStart=/usr/share/sway/scripts/foot.sh --server=3
+# UnsetEnvironment=LISTEN_PID LISTEN_FDS LISTEN_FDNAMES
+# NonBlocking=true
+# ExecReload=kill -SIGUSR2 $MAINPID
+# Restart=on-failure
+# 
+# [Install]
+# WantedBy=wayland-session.target

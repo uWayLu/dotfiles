@@ -1,0 +1,12 @@
+[Unit]
+Description=Setup a dynamic tunnel to tun_win11
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/ssh -F %h/.ssh/config -o ExitOnForwardFailure=yes -nNT tun_win11
+RestartSec=15
+Restart=on-failure
+KillMode=mixed
+
+[Install]
+WantedBy=default.target

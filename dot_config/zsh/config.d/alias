@@ -1,0 +1,7 @@
+alias termbin="nc termbin.com 9999"
+alias cp="rsync -avP"
+alias systemctlu="systemctl --user"
+# k242
+SSHFS_K242_HTDOCS=$HOME/Workspace/sshfs_k242
+alias mnt_k242='sshfs -v k242:/opt/lampp/htdocs/ $SSHFS_K242_HTDOCS -F ~/.ssh/config -o sftp_server="sudo /usr/lib/openssh/sftp-server"'
+alias umnt_k242="umount $SSHFS_K242_HTDOCS"

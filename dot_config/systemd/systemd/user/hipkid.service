@@ -1,0 +1,11 @@
+[Unit]
+Description=HiPKI Local Sign Server
+After=default.target
+
+[Service]
+ExecStart=%h/.local/bin/hipki.sh
+
+[Install]
+WantedBy=default.target
+
+

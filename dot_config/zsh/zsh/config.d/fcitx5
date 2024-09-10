@@ -1,9 +1,0 @@
-# See: https://wiki.archlinuxcn.org/zh-tw/Fcitx5
-#export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export SDL_IM_MODULE=fcitx
-export INPUT_METHOD=fcitx
-export GLFW_IM_MODULE=ibus
-# Overwrite /etc/locale.conf
-#export LC_CTYPE=zh_TW.UTF-8

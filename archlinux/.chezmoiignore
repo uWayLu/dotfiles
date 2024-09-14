@@ -1,0 +1,6 @@
+**/.env
+**/.zcompdump*
+
+{{- if ne .chezmoi.hostname "ywl-kccc" }}
+.config/sway/**
+{{- end }}

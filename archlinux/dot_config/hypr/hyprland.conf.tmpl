@@ -19,7 +19,7 @@ monitor=,preferred,auto,auto
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 # Execute your favorite apps at launch
-exec-once = /usr/lib/pam_kwallet_init
+#exec-once = /usr/lib/pam_kwallet_init
 exec-once = systemctlu start plasma-polkit-agent
 $browser = brave
 exec-once = waybar & hyprpaper & $browser

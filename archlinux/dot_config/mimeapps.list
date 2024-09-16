@@ -5,6 +5,7 @@ hoppscotch=hoppscotch-handler.desktop
 application/pdf=org.gnome.Evince.desktop
 video/MP2T=mpv.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 
 [Added Associations]
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;

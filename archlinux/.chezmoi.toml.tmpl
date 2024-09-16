@@ -1,3 +1,17 @@
-[git]
-    name = 'uWayLu'
-    email = 'u.master.o.twn+chezmoi@gmail.com'
+{{ $email := promptString "email" }}
+{{ $name := promptString "name" }}
+{{ $recipient := promptString "gpg id" }}
+
+encryption = "gpg"
+
+[gpg]
+    recipient = "{{ $recipient | default `uWay Lu` }}"
+    args = ["--quiet"]
+
+[data]
+    email = "{{ $email | default `u.master.o.twn+chezmoi@gmail.com` }}"
+    name = "{{ $name | default `uWayLu` }}"
+
+[data.hyprland.monitor1]
+    resolution = "{{ promptString `main resoltion` | default `1920x1080` }}"
+

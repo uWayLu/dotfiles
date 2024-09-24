@@ -1,6 +1,7 @@
 #!/bin/sh
 
 PORT=${1:-22267}
+BROWSER=${2:-brave}
 
 TUN="ssh -M -fNL $PORT:127.0.0.1:$PORT win11.wan"
 pkill -f "$TUN"

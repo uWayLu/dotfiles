@@ -1,0 +1,27 @@
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+" https://softsmith.blogspot.com/2008/12/vim-tab.html
+set modeline
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set autoindent
+set cindent " C lang only
+
+" file type
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
+
+" line break
+set wrap
+set linebreak
+set showbreak=↪
+
+" show indent
+set list           " 顯示隱藏字符（例如空格和 Tab）
+set listchars=tab:»\ ,eol:¬
+
+" auto check indent
+filetype plugin indent on
+

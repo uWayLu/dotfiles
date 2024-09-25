@@ -5,9 +5,9 @@ echo $PATH
 PORT=5556
 DEVICE=localhost:$PORT
 APP="scrcpy -s $DEVICE \
-	--audio-codec=aac \
-	--audio-encoder='OMX.google.aac.encoder' \
-	--audio-buffer=32"
+	--audio-codec=aac "
+	#--audio-encoder='OMX.google.aac.encoder' \
+	#--audio-buffer=32"
 
 if ( adb devices | grep -q "$DEVICE[[:space:]]\+device" ); then
 	echo "deivce exists; do mirroring"

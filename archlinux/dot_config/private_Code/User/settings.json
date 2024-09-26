@@ -21,12 +21,13 @@
   "[php]": {
     "editor.defaultFormatter": "junstyle.php-cs-fixer"
   },
-  "workbench.colorTheme": "Default High Contrast",
+  "workbench.colorTheme": "Abyss",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.openRepositoryInParentFolders": "always",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "files.associations": { "*.module": "php" }
 }

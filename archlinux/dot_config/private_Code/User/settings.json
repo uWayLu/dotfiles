@@ -6,7 +6,7 @@
   "security.workspace.trust.untrustedFiles": "newWindow",
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.enabled": false,
-  "editor.minimap.side": "left",
+  "editor.minimap.side": "right",
   "editor.fontFamily": "'Maple Mono', 'Fira Code', 'monospace', monospace",
   "extensions.autoUpdate": false,
   "workbench.statusBar.visible": false,
@@ -21,7 +21,7 @@
   "[php]": {
     "editor.defaultFormatter": "junstyle.php-cs-fixer"
   },
-  "workbench.colorTheme": "Abyss",
+  "workbench.colorTheme": "Monokai Dimmed",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -29,5 +29,10 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.associations": { "*.module": "php" }
+  "files.associations": {
+    "*.module": "php"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

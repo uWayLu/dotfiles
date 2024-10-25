@@ -11,7 +11,7 @@ if ( adb devices | grep -q "$DEVICE[[:space:]]\+device" ); then
 	echo "deivce exists; do mirroring"
 	$($APP)
 else
-	TUN="ssh -M -fNL $PORT:127.0.0.1:5565 win11.wan"
+	TUN="ssh -M -fNL $PORT:127.0.0.1:5565 wsl"
 	pkill -f "$TUN"
 	$($TUN) && adb connect $DEVICE && $($APP)
 fi

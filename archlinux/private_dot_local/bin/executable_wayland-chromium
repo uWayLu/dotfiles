@@ -2,6 +2,6 @@
 /usr/bin/${0##*/} \
 	--ozone-platform=wayland \
 	--enable-features=UseOzonePlatform \
-	--enable-wayland-ime \
+	--gtk-version=4 \
 	--password-store=detect \
 	"$@"

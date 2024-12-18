@@ -9,7 +9,7 @@ export PATH=/usr/NX/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 #systemctl --user import-environment PATH
 export BROWSER=brave
-export EDITOR=vim
+export EDITOR=nvim
 
 # https://wiki.archlinux.org/title/Wayland#Electron
 export ELECTRON_OZONE_PLATFORM_HINT=auto

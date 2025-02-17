@@ -7,6 +7,7 @@ video/MP2T=mpv.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
+x-scheme-handler/discord=vesktop.desktop
 
 [Added Associations]
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;

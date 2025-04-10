@@ -2,8 +2,9 @@
 
 PORT=${1:-22267}
 BROWSER=${2:-brave}
+REMOTE=ywl-raptor
 
-TUN="ssh -M -fNL $PORT:127.0.0.1:$PORT win11.wan"
+TUN="ssh -M -fNL $PORT:127.0.0.1:$PORT $REMOTE"
 pkill -f "$TUN"
 $($TUN)
 

@@ -5,6 +5,7 @@ echo $PATH
 PORT=5565
 DEVICE=localhost:$PORT
 APP="scrcpy -s $DEVICE --audio-codec=aac --audio-encoder=OMX.google.aac.encoder"
+REMOTE=wsl
 
 run_wsl_cmd() {
     if systemctl --user status ssh-tunnel-win11.service | grep -q "Active: active"; then
@@ -21,9 +22,11 @@ if ( adb devices | grep -q "$DEVICE[[:space:]]\+device" ); then
     echo "deivce exists; do mirroring"
     $($APP)
 else
-    TUN="ssh -M -fNL $PORT:0.0.0.0:5565 wsl"
+    TUN="ssh -M -fNL $PORT:0.0.0.0:5565 $REMOTE"
     pkill -f "$TUN"
-    $($TUN) && run_wsl_cmd && adb connect $DEVICE && $($APP)
+    $($TUN) && \
+	    #run_wsl_cmd && \
+	    adb connect $DEVICE && $($APP)
 fi
 
 

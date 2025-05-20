@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'
 
@@ -173,7 +172,7 @@ handle_image() {
         ## Video
         video/*)
             # Get embedded thumbnail
-            ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy "${IMAGE_CACHE_PATH}" && exit 6
+            ffmpeg -i "${FILE_PATH}" -map 0:v -c copy "${IMAGE_CACHE_PATH}" && exit 6
             # Get frame 10% into video
             ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
             exit 1;;
@@ -464,7 +463,6 @@ handle_mime() {
 handle_fallback() {
     echo '----- File Type Classification -----' && file --dereference --brief -- "${FILE_PATH}" && exit 5
 }
-
 
 MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
 if [[ "${PV_IMAGE_ENABLED}" == 'True' ]]; then

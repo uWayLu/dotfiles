@@ -1,0 +1,5 @@
+set pages-per-row 2
+set first-page-column 1:1
+set adjust-open "best-fit"
+set selection-clipboard clipboard
+

@@ -1,28 +1,31 @@
-#!/usr/bin/bash
-export PATH=$PATH:/opt/android-sdk/platform-tools
-echo $PATH
+#!/usr/bin/env bash
 
-PORT=5556
-DEVICE=localhost:$PORT
+export PATH=$PATH:/opt/android-sdk/platform-tools
+echo "PATH=$PATH"
+
+LOCAL_PORT=5556
+REMOTE_PORT=5566
+DEVICE=localhost:$LOCAL_PORT
 APP="scrcpy -s $DEVICE --audio-codec=aac --audio-encoder=OMX.google.aac.encoder"
 
 run_wsl_cmd() {
     if systemctl --user status ssh-tunnel-win11.service | grep -q "Active: active"; then
         echo "ssh-tunnel-win11.service is active."
-
-        ssh -t wsl "bash -ic 'ssh_tun_bluestacks fgo'"
+	ssh wsl 'bash -ic "source ~/.bashrc && ssh_tun_bluestacks fgo"'
         echo "Run cmd on remote WSL"
     else
         echo "ssh-tunnel-win11.service is not active."
     fi
 }
 
-if ( adb devices | grep -q "$DEVICE[[:space:]]\+device" ); then
-    echo "deivce exists; do mirroring"
-    $($APP)
+if adb devices | grep -q "$DEVICE[[:space:]]*device"; then
+    echo "Device exists; do mirroring"
+    $APP
 else
-    TUN="ssh -M -fNL $PORT:0.0.0.0:5566 wsl"
-    pkill -f "$TUN"
-    $($TUN) && run_wsl_cmd && adb connect $DEVICE && $($APP)
+    pkill -f "ssh -M -fNL $LOCAL_PORT:0.0.0.0:$REMOTE_PORT wsl"
+    ssh -M -fNL $LOCAL_PORT:0.0.0.0:$REMOTE_PORT wsl
+    run_wsl_cmd
+    adb connect $DEVICE
+    $APP
 fi
 

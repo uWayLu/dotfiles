@@ -1,15 +1,17 @@
-[Default Applications]
-x-scheme-handler/msteams=teams-for-linux.desktop
-x-scheme-handler/mailto=brave-browser.desktop
-hoppscotch=hoppscotch-handler.desktop
-application/pdf=org.gnome.Evince.desktop
-video/MP2T=mpv.desktop
-x-scheme-handler/tonsite=org.telegram.desktop.desktop
-x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
-x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
-x-scheme-handler/discord=vesktop.desktop
-application/msword=onlyoffice.desktop
-application/vnd.ms-excel=onlyoffice.desktop
-
 [Added Associations]
+video/x-matroska=mpv.desktop;org.avidemux.Avidemux.desktop;vlc.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+
+[Default Applications]
+application/msword=onlyoffice.desktop
+application/pdf=org.gnome.Evince.desktop
+application/vnd.ms-excel=onlyoffice.desktop
+hoppscotch=hoppscotch-handler.desktop
+video/MP2T=mpv.desktop
+video/x-matroska=mpv.desktop;
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
+x-scheme-handler/mailto=brave-browser.desktop
+x-scheme-handler/msteams=teams-for-linux.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop

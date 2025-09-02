@@ -25,3 +25,6 @@ set listchars=tab:»\ ,eol:¬
 " auto check indent
 filetype plugin indent on
 
+
+" vim guess file enc
+set fileencodings=utf-8,big5,cp950,gbk,gbk2312,latin1

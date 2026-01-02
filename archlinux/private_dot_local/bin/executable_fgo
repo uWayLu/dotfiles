@@ -1,31 +1,93 @@
 #!/usr/bin/env bash
+set -u  # 不用 set -e，因為我們要自己處理錯誤碼與重試
 
-export PATH=$PATH:/opt/android-sdk/platform-tools
+export PATH="$PATH:/opt/android-sdk/platform-tools"
 echo "PATH=$PATH"
 
 LOCAL_PORT=5556
 REMOTE_PORT=5566
-DEVICE=localhost:$LOCAL_PORT
-APP="scrcpy -s $DEVICE --audio-codec=aac --audio-encoder=OMX.google.aac.encoder"
+DEVICE="localhost:$LOCAL_PORT"
+APP=(scrcpy -s "$DEVICE" --no-audio)
 
-run_wsl_cmd() {
-    if systemctl --user status ssh-tunnel-win11.service | grep -q "Active: active"; then
-        echo "ssh-tunnel-win11.service is active."
-	ssh wsl 'bash -ic "source ~/.bashrc && ssh_tun_bluestacks fgo"'
-        echo "Run cmd on remote WSL"
-    else
-        echo "ssh-tunnel-win11.service is not active."
+MAX_RETRY=3
+SLEEP_BETWEEN=1
+
+retry() {
+  # 用法: retry <cmd> [args...]
+  local n=1
+  while true; do
+    "$@"
+    local rc=$?
+    if [[ $rc -eq 0 ]]; then
+      return 0
     fi
+
+    if [[ $n -ge $MAX_RETRY ]]; then
+      echo "ERROR: command failed after $n attempts (rc=$rc): $*" >&2
+      return $rc
+    fi
+
+    echo "WARN: command failed (attempt $n/$MAX_RETRY, rc=$rc): $*" >&2
+    n=$((n+1))
+    sleep "$SLEEP_BETWEEN"
+  done
 }
 
-if adb devices | grep -q "$DEVICE[[:space:]]*device"; then
+device_ready() {
+  adb devices >/dev/null 2>&1
+  local rc=$?
+  [[ $rc -eq 0 ]] || return $rc
+
+  adb devices 2>/dev/null | awk 'NR>1 {print $1,$2}' | grep -q "^${DEVICE}[[:space:]]device$"
+  return $?
+}
+
+run_wsl_cmd() {
+  systemctl --user status ssh-tunnel-win11.service >/dev/null 2>&1
+  local rc=$?
+  if [[ $rc -eq 0 ]]; then
+    echo "ssh-tunnel-win11.service is active."
+    retry ssh wsl bash -ic 'source ~/.bashrc && ssh_tun_bluestacks fgo'
+    rc=$?
+    [[ $rc -eq 0 ]] && echo "Run cmd on remote WSL"
+    return $rc
+  else
+    echo "ssh-tunnel-win11.service is not active."
+    return 1
+  fi
+}
+
+start_tunnel() {
+  # 清掉舊 tunnel（不把 pkill 失敗當錯）
+  pkill -f "ssh -M -fNL ${LOCAL_PORT}:0.0.0.0:${REMOTE_PORT} wsl" >/dev/null 2>&1
+  # 建立新 tunnel
+  retry ssh -M -fNL "${LOCAL_PORT}:0.0.0.0:${REMOTE_PORT}" wsl
+}
+
+connect_device() {
+  # adb connect 會回傳非 0 的情況不少，所以用 retry 包
+  retry adb connect "$DEVICE"
+}
+
+run_scrcpy() {
+  retry "${APP[@]}"
+}
+
+main() {
+  if device_ready; then
     echo "Device exists; do mirroring"
-    $APP
-else
-    pkill -f "ssh -M -fNL $LOCAL_PORT:0.0.0.0:$REMOTE_PORT wsl"
-    ssh -M -fNL $LOCAL_PORT:0.0.0.0:$REMOTE_PORT wsl
-    run_wsl_cmd
-    adb connect $DEVICE
-    $APP
-fi
+    run_scrcpy
+    exit $?
+  fi
+
+  echo "Device not ready; set up tunnel and connect..."
+
+  start_tunnel || exit $?
+  run_wsl_cmd || echo "WARN: run_wsl_cmd failed; continue anyway." >&2
+
+  connect_device || exit $?
+  run_scrcpy || exit $?
+}
+
+main "$@"
 

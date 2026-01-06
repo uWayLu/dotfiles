@@ -47,7 +47,7 @@ run_wsl_cmd() {
   local rc=$?
   if [[ $rc -eq 0 ]]; then
     echo "ssh-tunnel-win11.service is active."
-    retry ssh wsl bash -ic 'source ~/.bashrc && ssh_tun_bluestacks fgo'
+    retry ssh wsl bash -ic 'source ~/.bashrc && ssh_tun_bluestacks fgoo'
     rc=$?
     [[ $rc -eq 0 ]] && echo "Run cmd on remote WSL"
     return $rc

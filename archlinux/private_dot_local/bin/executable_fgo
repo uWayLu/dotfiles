@@ -7,6 +7,7 @@ echo "PATH=$PATH"
 LOCAL_PORT=5556
 REMOTE_PORT=5566
 DEVICE="localhost:$LOCAL_PORT"
+#APP=(scrcpy -s "$DEVICE" --no-audio)
 APP=(scrcpy -s "$DEVICE" --no-audio)
 
 MAX_RETRY=3
@@ -47,7 +48,7 @@ run_wsl_cmd() {
   local rc=$?
   if [[ $rc -eq 0 ]]; then
     echo "ssh-tunnel-win11.service is active."
-    retry ssh wsl bash -ic 'source ~/.bashrc && ssh_tun_bluestacks fgoo'
+    retry ssh wsl bash -lc 'ssh_tun_bluestacks fgo'
     rc=$?
     [[ $rc -eq 0 ]] && echo "Run cmd on remote WSL"
     return $rc

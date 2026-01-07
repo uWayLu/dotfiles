@@ -11,7 +11,7 @@ run_wsl_cmd() {
     if systemctl --user status ssh-tunnel-win11.service | grep -q "Active: active"; then
         echo "ssh-tunnel-win11.service is active."
 
-        ssh -t wsl "bash -ic 'ssh_tun_bluestacks alas'"
+        ssh wsl "bash -lc 'ssh_tun_bluestacks alas'"
         echo "Run cmd on remote WSL"
     else
         echo "ssh-tunnel-win11.service is not active."

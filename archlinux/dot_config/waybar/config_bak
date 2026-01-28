@@ -1,0 +1,6 @@
+{
+  "format": "{:%Y-%m-%d %H:%M:%S}",
+  "tooltip-format": "{:%A, %d %B %Y %H:%M:%S}",
+  "interval": 1
+}
+

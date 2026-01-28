@@ -125,7 +125,7 @@
         "format": "{:%R 󰃭 %Y·%m·%d}",
         "rotate": 0,
         "tooltip-format": "<span>{calendar}</span>",
-        "on-click": "brave --app=https://calendar.google.com/calendar/",
+        "on-click": "google-chrome-stable --app=https://calendar.google.com/calendar/",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,

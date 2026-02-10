@@ -7,11 +7,14 @@ echo "PATH=$PATH"
 LOCAL_PORT=5556
 REMOTE_PORT=5566
 DEVICE="localhost:$LOCAL_PORT"
-#APP=(scrcpy -s "$DEVICE" --no-audio)
+
 APP=(scrcpy -s "$DEVICE" --no-audio)
 
 MAX_RETRY=3
 SLEEP_BETWEEN=1
+
+# tunnel PID 檔（比 pkill -f 安全很多）
+TUNNEL_PIDFILE="${XDG_RUNTIME_DIR:-/tmp}/fgo_ssh_tunnel_${LOCAL_PORT}.pid"
 
 retry() {
   # 用法: retry <cmd> [args...]
@@ -35,12 +38,14 @@ retry() {
 }
 
 device_ready() {
-  adb devices >/dev/null 2>&1
-  local rc=$?
-  [[ $rc -eq 0 ]] || return $rc
+  adb devices >/dev/null 2>&1 || return $?
 
-  adb devices 2>/dev/null | awk 'NR>1 {print $1,$2}' | grep -q "^${DEVICE}[[:space:]]device$"
-  return $?
+  # 必須看到 device 狀態
+  adb devices 2>/dev/null | awk 'NR>1 {print $1,$2}' | grep -q "^${DEVICE}[[:space:]]device$" || return 1
+
+  # 關鍵：真的能 shell 才算 ready（避免假連線/半死）
+  adb -s "$DEVICE" shell true >/dev/null 2>&1 || return 1
+  return 0
 }
 
 run_wsl_cmd() {
@@ -58,26 +63,71 @@ run_wsl_cmd() {
   fi
 }
 
+stop_tunnel_if_any() {
+  if [[ -f "$TUNNEL_PIDFILE" ]]; then
+    local oldpid
+    oldpid="$(cat "$TUNNEL_PIDFILE" 2>/dev/null || true)"
+    if [[ -n "${oldpid:-}" ]] && kill -0 "$oldpid" 2>/dev/null; then
+      kill "$oldpid" >/dev/null 2>&1 || true
+    fi
+    rm -f "$TUNNEL_PIDFILE" >/dev/null 2>&1 || true
+  fi
+}
+
 start_tunnel() {
-  # 清掉舊 tunnel（不把 pkill 失敗當錯）
-  pkill -f "ssh -M -fNL ${LOCAL_PORT}:0.0.0.0:${REMOTE_PORT} wsl" >/dev/null 2>&1
-  # 建立新 tunnel
-  retry ssh -M -fNL "${LOCAL_PORT}:0.0.0.0:${REMOTE_PORT}" wsl
+  stop_tunnel_if_any
+
+  # -f: 背景化；ExitOnForwardFailure: forward 不成功就直接失敗，避免假成功
+  # keepalive: 讓死掉的連線快點死透，不要卡一個半死 tunnel
+  ssh -fNL "${LOCAL_PORT}:0.0.0.0:${REMOTE_PORT}" wsl \
+    -o ExitOnForwardFailure=yes \
+    -o ServerAliveInterval=10 \
+    -o ServerAliveCountMax=2
+
+  # ssh -f 會讓 $! 成為 ssh 的 PID（夠用來 kill）
+  echo $! >"$TUNNEL_PIDFILE"
 }
 
 connect_device() {
-  # adb connect 會回傳非 0 的情況不少，所以用 retry 包
+  # 先斷開一次，清理舊狀態（避免 offline/舊連線殘留）
+  adb disconnect "$DEVICE" >/dev/null 2>&1 || true
+
+  # adb connect 常常回非 0，所以用 retry
   retry adb connect "$DEVICE"
+
+  # connect 回來也不代表真的可用，補一個快速驗證
+  adb -s "$DEVICE" shell true >/dev/null 2>&1
 }
 
-run_scrcpy() {
-  retry "${APP[@]}"
+reset_adb() {
+  adb disconnect "$DEVICE" >/dev/null 2>&1 || true
+  adb kill-server >/dev/null 2>&1 || true
+  adb start-server >/dev/null 2>&1 || true
+}
+
+scrcpy_with_recover_once() {
+  # 先試一次
+  "${APP[@]}"
+  local rc=$?
+  if [[ $rc -eq 0 ]]; then
+    return 0
+  fi
+
+  echo "WARN: scrcpy failed (rc=$rc). Doing one recovery cycle..." >&2
+
+  # 救援流程（只做一次）：重置 ADB + 重建 tunnel + 重連
+  reset_adb
+  start_tunnel || return $?
+  connect_device || return $?
+
+  "${APP[@]}"
+  return $?
 }
 
 main() {
   if device_ready; then
-    echo "Device exists; do mirroring"
-    run_scrcpy
+    echo "Device ready; start mirroring."
+    retry scrcpy_with_recover_once
     exit $?
   fi
 
@@ -87,7 +137,8 @@ main() {
   run_wsl_cmd || echo "WARN: run_wsl_cmd failed; continue anyway." >&2
 
   connect_device || exit $?
-  run_scrcpy || exit $?
+
+  retry scrcpy_with_recover_once || exit $?
 }
 
 main "$@"

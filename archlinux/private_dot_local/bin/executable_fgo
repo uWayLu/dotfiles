@@ -77,12 +77,10 @@ stop_tunnel_if_any() {
 start_tunnel() {
   stop_tunnel_if_any
 
-  # -f: 背景化；ExitOnForwardFailure: forward 不成功就直接失敗，避免假成功
-  # keepalive: 讓死掉的連線快點死透，不要卡一個半死 tunnel
-  ssh -fNL "${LOCAL_PORT}:0.0.0.0:${REMOTE_PORT}" wsl \
+  ssh -NL "${LOCAL_PORT}:0.0.0.0:${REMOTE_PORT}" wsl \
     -o ExitOnForwardFailure=yes \
     -o ServerAliveInterval=10 \
-    -o ServerAliveCountMax=2
+    -o ServerAliveCountMax=2 &
 
   # ssh -f 會讓 $! 成為 ssh 的 PID（夠用來 kill）
   echo $! >"$TUNNEL_PIDFILE"

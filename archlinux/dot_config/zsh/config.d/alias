@@ -11,3 +11,4 @@ alias umnt_k242="umount $SSHFS_K242_HTDOCS"
 SSHFS_WIN_D=$HOME/Workspace/sshfs_win_d
 alias mnt_win_d='sshfs -v wsl:/mnt/d/ $SSHFS_WIN_D -F ~/.ssh/config'
 alias umnt_win_d="umount $SSHFS_WIN_D"
+

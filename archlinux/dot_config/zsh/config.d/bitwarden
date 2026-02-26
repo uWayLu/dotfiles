@@ -1,0 +1,41 @@
+alias bw-unlock='export BW_SESSION=$(bw unlock --raw)'
+alias bw-ls='bw list items | jq -r ".[] | [.name, .login.username] | @tsv"'
+
+# Bitwarden 模糊搜尋與密碼複製 (修復 JSON 解析與空畫面問題)
+bwp() {
+    if [ -z "$BW_SESSION" ] || ! bw status | grep -q '"status":"unlocked"'; then
+        echo "請先解鎖: bwl"
+        return 1
+    fi
+
+    local parsed_data
+    if [ -n "$1" ]; then
+        # 帶入參數時，利用內建 --search 加速過濾
+        parsed_data=$(bw list items --search "$1" | jq -r '.[] | select(.type==1) | "\(.name) [\(.login.username // "無帳號")]\t\(.id)"')
+    else
+        echo "正在讀取完整密碼庫，請稍候..."
+        parsed_data=$(bw list items | jq -r '.[] | select(.type==1) | "\(.name) [\(.login.username // "無帳號")]\t\(.id)"')
+    fi
+
+    if [ -z "$parsed_data" ]; then
+        echo "查無資料。"
+        return 1
+    fi
+
+    local selected=$(printf "%s\n" "$parsed_data" | fzf --prompt="選擇密碼: " --delimiter='\t' --with-nth=1)
+
+    if [ -z "$selected" ]; then
+        return 0
+    fi
+
+    local item_id=$(printf "%s\n" "$selected" | awk -F'\t' '{print $2}')
+    bw get password "$item_id" | tr -d '\n' | wl-copy
+    echo "密碼已複製到 Wayland 剪貼簿。"
+}
+
+# 使用 rbw
+rbwp() {
+    # rbw ls 會直接輸出乾淨的名稱，配合 fzf 選取後，rbw get 直接抓密碼
+    local selected=$(rbw ls | fzf --prompt="選擇密碼: ")
+    [ -n "$selected" ] && rbw get "$selected" | tr -d '\n' | wl-copy && echo "已複製"
+}

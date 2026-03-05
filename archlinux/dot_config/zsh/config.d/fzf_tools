@@ -1,0 +1,170 @@
+# fzf_tools.zsh (fixed & enhanced)
+# 依賴：fzf, fd, rg, bat（可選：delta）
+# 設計重點：fzf --preview 不呼叫 zsh function，避免子 shell 看不到 function 的問題。
+
+: ${FZF_DEFAULT_OPTS:="--height 80% --layout=reverse --border --cycle"}
+
+# ---------- Cheatsheet ----------
+fzhelp() {
+  cat <<'EOF'
+常用縮寫（你要記的就這些）：
+
+【檔案/目錄】
+  ff           模糊找檔案（fd -> fzf，含 preview）
+  vf           模糊選檔後用 vim 開啟
+  cdf          模糊跳目錄（cd 到選到的資料夾）
+
+【內容搜尋】
+  rf <字串>    用 rg 搜內容（互動選擇，preview 命中附近）
+  rfv <字串>   同上，但選到後用 vim 開檔（不自動跳行）
+
+【Git】
+  gdf          選檔案看 git diff（preview 用 delta，沒 delta 就純 diff）
+  glf          選 commit 看 git show（preview 用 delta，沒 delta 就純 show）
+  gcof         選 branch 然後 checkout（包含 remotes）
+  gfiles       選 tracked file 並 preview 內容（bat）
+
+【SVN】
+  svndf        以 svn status 選檔案 preview svn diff
+  svnlogf      以 svn log 選 revision preview svn diff -c
+  svncatf      以 svn list -R 選檔案 preview svn cat
+
+【系統】
+  psk          選 process 後 kill（SIGTERM）
+  psres        選 process 後強制 kill (-9) 並以原指令背景重啟
+EOF
+}
+alias fz='fzhelp'
+
+# ---------- 檔案/目錄 ----------
+ff() {
+  command -v fd >/dev/null 2>&1 || { echo "缺 fd"; return 1; }
+  # 加上 --size -10m 防止載入超大檔案導致 OOM
+  fd --hidden --follow --exclude .git --type f --size -10m \
+    | fzf --preview 'bat --color=always --style=numbers,changes --line-range :300 -- {} 2>/dev/null || sed -n "1,300p" -- {} 2>/dev/null || head -300 -- {}'
+}
+
+vf() {
+  local f
+  f="$(ff)" || return
+  [[ -n "$f" ]] && vim -- "$f"
+}
+
+cdf() {
+  command -v fd >/dev/null 2>&1 || { echo "缺 fd"; return 1; }
+  local d
+  d="$(fd -t d --hidden --follow --exclude .git | fzf --preview 'ls -la -- "{}" 2>/dev/null | head -n 120')" || return
+  [[ -n "$d" ]] && cd -- "$d"
+}
+
+# ---------- 內容搜尋 ----------
+rf() {
+  command -v rg >/dev/null 2>&1 || { echo "缺 rg"; return 1; }
+  local q="$*"
+  [[ -z "$q" ]] && { echo "用法：rf <關鍵字>"; return 2; }
+
+  # 加上 --max-filesize 與 --max-columns 防止 OOM
+  rg --line-number --no-heading --color=always --smart-case --max-filesize 10M --max-columns 1000 -- "$q" \
+    | fzf --ansi --delimiter ':' \
+        --preview 'f={1}; l={2}; start=$((l-80)); [ $start -le 0 ] && start=1; end=$((l+80)); if [ -f "$f" ]; then bat --color=always --style=numbers --highlight-line "$l" --line-range "$start:$end" -- "$f" 2>/dev/null || sed -n "${start},${end}p" -- "$f"; fi'
+}
+
+rfv() {
+  local sel f
+  sel="$(rf "$@")" || return
+  f="${sel%%:*}"
+  [[ -n "$f" ]] && vim -- "$f"
+}
+
+# ---------- Git ----------
+gdf() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "不在 git repo 裡"; return 1; }
+  git diff --name-only \
+    | fzf --preview 'git diff -- "{}" | (command -v delta >/dev/null 2>&1 && delta || cat)'
+}
+
+glf() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "不在 git repo 裡"; return 1; }
+  git log --oneline --color=always \
+    | fzf --ansi --preview 'git show --color=always {1} | (command -v delta >/dev/null 2>&1 && delta || cat)'
+}
+
+gcof() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "不在 git repo 裡"; return 1; }
+  local b
+  b="$(
+    git branch --all --color=always \
+      | sed 's/^..//' \
+      | fzf --ansi --preview 'git log --oneline --graph --decorate --color=always --max-count=80 $(echo "{}" | sed "s#^remotes/##")'
+  )" || return
+
+  b="$(echo "$b" | sed -E 's/\x1B\[[0-9;]*[mK]//g' | sed -E 's/^\*?\s*//')"
+  b="${b#remotes/origin/}"
+  [[ -n "$b" ]] && git checkout -- "$b"
+}
+
+gfiles() {
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "不在 git repo 裡"; return 1; }
+  git ls-files \
+    | fzf --preview 'bat --color=always --style=numbers,changes --line-range :300 -- "{}" 2>/dev/null || sed -n "1,300p" -- "{}" 2>/dev/null || head -300 -- "{}"'
+}
+
+# ---------- SVN ----------
+svndf() {
+  command -v svn >/dev/null 2>&1 || { echo "缺 svn"; return 1; }
+  svn status \
+    | fzf --preview 'p=$(echo "{}" | awk "{print \$2}"); [[ -n "$p" ]] && svn diff -- "$p"'
+}
+
+svnlogf() {
+  command -v svn >/dev/null 2>&1 || { echo "缺 svn"; return 1; }
+  svn log \
+    | grep '^r[0-9]\+ ' \
+    | fzf --preview 'r=$(echo "{}" | cut -d"|" -f1 | tr -d "r "); [[ -n "$r" ]] && svn diff -c "$r"'
+}
+
+svncatf() {
+  command -v svn >/dev/null 2>&1 || { echo "缺 svn"; return 1; }
+  svn list -R \
+    | fzf --preview 'svn cat -- "{}" 2>/dev/null | head -n 220'
+}
+
+# ---------- 系統 ----------
+psk() {
+  local line pid
+  line="$(ps aux | fzf --header='選一個 process 後送 SIGTERM（-9）' --preview 'echo "{}"')" || return
+  pid="$(echo "$line" | awk '{print $2}')"
+  [[ -n "$pid" ]] && kill -9 "$pid"
+}
+
+psres() {
+  local line pid
+  local -a cmd_args # 宣告陣列來精確存放參數
+  
+  line="$(ps aux | fzf --header='選一個 process 強制中斷並於背景重啟' --preview 'echo "{}"')" || return
+  pid="$(echo "$line" | awk '{print $2}')"
+  [[ -n "$pid" ]] || return
+
+  # 從 /proc 讀取精準的啟動參數（Zsh 語法：以 \0 分割字串存入陣列）
+  if [[ -r "/proc/$pid/cmdline" ]]; then
+    cmd_args=( ${(0)"$(< /proc/$pid/cmdline)"} )
+  else
+    echo "無法讀取 PID $pid 的 cmdline (可能權限不足或已結束)"
+    return 1
+  fi
+
+  [[ ${#cmd_args[@]} -eq 0 ]] && { echo "指令為空"; return 1; }
+
+  echo "Kill PID: $pid"
+  kill -9 "$pid" 2>/dev/null
+  
+  # 稍微等一下，確保 port 或資源被系統釋放
+  sleep 0.5
+
+  # 用 (q) 標記安全地印出帶有正確跳脫字元的指令讓你看
+  echo "Restarting: ${(q)cmd_args}"
+  
+  # 直接以陣列形式執行，不透過 eval，完美避開引號與 * 號展開問題
+  "${cmd_args[@]}" &!
+}
+

@@ -1,0 +1,11 @@
+nvim() {
+  if [ -n "$KITTY_WINDOW_ID" ] && command -v kitten >/dev/null 2>&1; then
+    kitten @ set-spacing padding=0 margin=0 >/dev/null 2>&1
+    command nvim "$@"
+    local status=$?
+    kitten @ set-spacing padding=default margin=default >/dev/null 2>&1
+    return "$status"
+  else
+    command nvim "$@"
+  fi
+}

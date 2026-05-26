@@ -1,0 +1,1226 @@
+: 1727156955:0;echo $$
+: 1727156957:0;echo $?
+: 1727156958:0;echo $0
+: 1727317020:0;svn blame auction.html
+: 1727317023:0;svn blame auction.html | less
+: 1727677071:0;git status
+: 1727677073:0;git pull
+: 1727677080:0;git log
+: 1727677084:0;git branch
+: 1727677090:0;git branch --remote
+: 1727677209:0;npm run dev
+: 1727677225:0;npm ci
+: 1727677233:0;npm audit fix
+: 1727677242:0;git status
+: 1727677247:0;git diff
+: 1727677257:0;npm run dev
+: 1727678921:0;svn st
+: 1727678924:0;git status
+: 1727678925:0;git add .
+: 1727678973:0;git commit -m 'chore: npm audit fix'
+: 1727678975:0;git push
+: 1727680530:0;ls tailwind.config.cjs
+: 1727681843:0;git pull
+: 1727681854:0;git merge abort
+: 1727681861:0;git status
+: 1727681869:0;git reset --hard
+: 1727681873:0;git pull
+: 1727681879:0;npm run dev
+: 1727686525:0;git status
+: 1727686527:0;git add .
+: 1727686563:0;git commit -m 'fix: greeting overflow'
+: 1727686566:0;git push
+: 1727690143:0;git status
+: 1728288721:0;git pull
+: 1728288955:0;npm run dev
+: 1728294858:0;git status
+: 1728294863:0;git reset
+: 1728294868:0;git reset --hard
+: 1728463667:0;npm run dev
+: 1728467675:0;git status
+: 1728467676:0;git add .
+: 1728467683:0;git status
+: 1728467700:0;git commit -m '(WIP): personal card'
+: 1728467702:0;git status
+: 1728467703:0;git push
+: 1729842038:0;npm run dev
+: 1729848924:0;git reset --hard
+: 1730456570:0;svn diff
+: 1730456595:0;./addversion.sh
+: 1730456610:0;svn ci -m 'feat: çƒ»®éƒ¬ƒ¤èª¿æƒµ´'
+: 1730456613:0;svn log
+: 1730456617:0;svn log | less
+: 1730456621:0;svn up
+: 1730456622:0;svn log | less
+: 1730456633:0;svn info
+: 1736922493:0;npx webb
+: 1736922498:0;npx run webb
+: 1736922507:0;npm run webb
+: 1736926162:0;svn st
+: 1736926169:0;svn up
+: 1736926171:0;svn s
+: 1736926173:0;svn st
+: 1736926182:0;svn diff package.json
+: 1736926198:0;svn revert package.json
+: 1736926202:0;svn diff package.json
+: 1736926204:0;svn st
+: 1736926214:0;svn diff 
+: 1736926231:0;svn st
+: 1736926296:0;svn ci - m 'fix: #1837~5207 1130205æƒ¼ƒ©å»ƒ€åƒµƒ¦ç¼ºåƒ€±åƒ£¹è³ƒ§æƒ¶ƒ¹'
+: 1736926301:0;svn ci -m 'fix: #1837~5207 1130205æƒ¼ƒ©å»ƒ€åƒµƒ¦ç¼ºåƒ€±åƒ£¹è³ƒ§æƒ¶ƒ¹'
+: 1736926304:0;svn up
+: 1739851709:0;npm run dev
+: 1739851732:0;git status
+: 1739851763:0;git checkout master
+: 1739851772:0;npm run dev
+: 1739851803:0;git branch master
+: 1739851812:0;git checkout -b master
+: 1739851817:0;git checkout master
+: 1739851820:0;git log
+: 1739851877:0;git branch
+: 1739851884:0;pwd
+: 1739851886:0;git log
+: 1739851907:0;git checkout -b wip-card
+: 1739851910:0;git push
+: 1739851931:0;git push -u origin/wip-card
+: 1739851936:0;git push -u origin wip-card
+: 1739851939:0;git pusg
+: 1739851941:0;git push
+: 1739851944:0;git log
+: 1739851954:0;git check master
+: 1739851964:0;git checkout master
+: 1739851976:0;git reset --hard HEAD~
+: 1739851979:0;git log
+: 1739851990:0;git checkout wip-card
+: 1739851991:0;git log
+: 1739852006:0;git push
+: 1739852009:0;git log
+: 1739852022:0;git checkout master
+: 1739852024:0;git pull
+: 1739852029:0;npm run build
+: 1739852039:0;git log
+: 1739852041:0;git status
+: 1739852085:0;git add .
+: 1739852097:0;git commit -m 'chore: update url'
+: 1739852102:0;git push
+: 1739852425:0;git status
+: 1739852430:0;npm run build
+: 1739852436:0;git status
+: 1739852444:0;git checkout gh-pages 
+: 1739852445:0;git status
+: 1739852473:0;ls dist
+: 1739852558:0;git status
+: 1739852561:0;ls
+: 1739852572:0;mv dist/* .
+: 1739852573:0;ls
+: 1739852579:0;git status
+: 1739852592:0;git add index.html assets favicon.ico
+: 1739852594:0;git status
+: 1739852603:0;npm run preview
+: 1739852613:0;[wd
+: 1739852613:0;pwd
+: 1739852633:0;ls assets
+: 1739852637:0;git status
+: 1739852659:0;git commit -m 'deploy manually'
+: 1739852660:0;git push
+: 1739944697:0;ls
+: 1739944713:0;npm run dev
+: 1739955367:0;cd src/pages
+: 1739955368:0;ls
+: 1739955371:0;code index.astro n
+: 1739957493:0;ls
+: 1739957497:0;touch about.astro
+: 1739957539:0;npm run dev
+: 1739957652:0;ls
+: 1739957655:0;cd src
+: 1739957655:0;ls
+: 1739957656:0;cd pages
+: 1739957657:0;ls
+: 1739957661:0;mkdir posts
+: 1739957665:0;cd posts
+: 1739957673:0;touch post-1.md
+: 1740021347:0;git status
+: 1740029584:0;fc-list --family noto
+: 1740029587:0;fc-list 
+: 1740029593:0;fc-list  | grep -i noto
+: 1740029969:0;git status
+: 1740029973:0;git add .
+: 1740030008:0;git commit -m 'finished tutorial unit 2'
+: 1740030010:0;git status
+: 1740030017:0;git remote
+: 1740030021:0;git remote branch
+: 1740030028:0;ls
+: 1740032061:0;mkdir src/components
+: 1740032075:0;touch src/components/Navigation.astro
+: 1740034173:0;touch src/components/Footer.astro
+: 1740035059:0;touch src/components/Social.astro
+: 1740035922:0;touch src/components/Header.astro
+: 1740037862:0;touch src/components/Hamburger.astro
+: 1740038033:0;mkdir src/scripts
+: 1740038041:0;touch src/scripts/menu.js
+: 1740038347:0;git status
+: 1740038348:0;git add .
+: 1740038356:0;git commit -m 'finished tutorial unit 3'
+: 1740039249:0;./artisan tinker
+: 1740040552:0;ls
+: 1740040555:0;cd src
+: 1740040555:0;ls
+: 1740040561:0;mkdir layouts
+: 1740040571:0;touch layouts/BaseLayout.astro
+: 1740043777:0;touch layouts/MarkdownPostLayout.astro
+: 1740045262:0;ls pages/posts
+: 1740045319:0;git status
+: 1740045321:0;git add .
+: 1740045333:0;git commit -m 'finished tutorial unit 4'
+: 1740045335:0;git status
+: 1740045432:0;git remote add origin git@github.com:uWayLu/astro.git\
+git branch -M main\
+git push -u origin main
+: 1740110195:0;npm run dev
+: 1740110293:0;touch src/pages/blog.astro
+: 1740111148:0;touch src/components/BlogPost.astro
+: 1740112876:0;mkdir src/pages/tags
+: 1740112899:0;touch src/pages/tags/[tag].astro
+: 1740112911:0;touch 'src/pages/tags/[tag].astro'
+: 1740117542:0;touch src/pages/tags/index.astro
+: 1740119961:0;npm install @astrojs/rss
+: 1740119979:0;npm auditr
+: 1740119980:0;npm audit
+: 1740119993:0;npm audit fix
+: 1740120027:0;npm run dev
+: 1740120182:0;ls src/pages
+: 1740120193:0;touch src/pages/rss.xml.js
+: 1740120390:0;git status
+: 1740120398:0;git add .
+: 1740120402:0;git commit -m 'finished tutorial unit 5'
+: 1740120404:0;git status
+: 1740120409:0;git push
+: 1740452864:0;npm run dev
+: 1740453805:0;npx astro add preac
+: 1740453809:0;npx astro add preact
+: 1740453905:0;npm run dev
+: 1740453921:0;touch src/components/Greeting.jsx
+: 1740472657:0;touch src/components/ThemeIcon.astro
+: 1740473121:0;touch src/styles/global.css
+: 1740476015:0;git status
+: 1740476019:0;git add .
+: 1740476023:0;git status
+: 1740476109:0;npx @astrojs/upgrade
+: 1740476140:0;npm run dev
+: 1740476155:0;svn st
+: 1740476158:0;git status
+: 1740476159:0;gti add .
+: 1740476163:0;git add .
+: 1740476164:0;git status
+: 1740476171:0;git log
+: 1740476197:0;git commit -m 'finished tutorial unit 6-3'
+: 1740476199:0;git push
+: 1740540167:0;git pull
+: 1740540183:0;npm run dev
+: 1740540973:0;npm install --save-dev tailwindcss postcss autoprefixer\
+
+: 1740540996:0;npx tailwindcss init
+: 1740541040:0;git status
+: 1740541069:0;npx tailwindcss init
+: 1740541103:0;rehash
+: 1740541105:0;npx tailwindcss init
+: 1740541128:0;npx tailwindcss@latest init
+: 1740541152:0;cat ./node_modules/.bin/
+: 1740541154:0;ls ./node_modules/.bin/
+: 1740541249:0;npm remove tailwindcss postcss autoprefixer\
+
+: 1740541539:0;npm install -D @tailwindcss/typography
+: 1740541742:0;touch src/components/Prose.astro
+: 1740542345:0;git status
+: 1740542347:0;git add .
+: 1740542379:0;git commit -m '(WIP) render md with tailwind typography'
+: 1740542381:0;git status
+: 1740542382:0;git push
+: 1740542417:0;npx astro add tailwind
+: 1740542499:0;git status
+: 1740542603:0;ls
+: 1740542627:0;mv src/styles/global.css src/styles/global-tutorial.css
+: 1740542635:0;touch src/styles/global.css
+: 1740546332:0;ls
+: 1740546346:0;npx tailwindcss init
+: 1740546867:0;npm install -D prettier-plugin-tailwindcss
+: 1740547943:0;npx tailwindcss init
+: 1740550986:0;npm run dev
+: 1740551119:0;git status
+: 1740551125:0;git reset --hard
+: 1740551127:0;git status
+: 1740551150:0;rm src/styles/global-tutorial.css
+: 1740551152:0;git status
+: 1740551153:0;git push
+: 1740554087:0;git status
+: 1740554090:0;git reset --hard
+: 1740554093:0;git status
+: 1740558263:0;imginfo public/hero-img.png
+: 1740558278:0;xdg-open public/hero-img.png
+: 1740558287:0;fileinfo public/hero-img.png
+: 1740558294:0;file public/hero-img.png
+: 1740560347:0;git status
+: 1740560353:0;git checkout -b
+: 1740560366:0;git checkout -b template
+: 1740560387:0;git push -u origin template
+: 1740560394:0;git checkout master
+: 1740560546:0;git status
+: 1740563125:0;git add .
+: 1740563165:0;git commit -m '(wip) update base info'
+: 1740563167:0;git status
+: 1740563169:0;git push
+: 1740563443:0;git status
+: 1740563534:0;npm run preview
+: 1740563547:0;npm run build
+: 1740563552:0;npm run preview
+: 1740563610:0;git status
+: 1740563614:0;ls
+: 1740563616:0;ls dist
+: 1740563619:0;cd dist
+: 1740563624:0;php -S localhost:4322
+: 1740563635:0;docker ps
+: 1740563675:0;docker exec -it afcd php -S localhost:4322
+: 1740563691:0;docker exec -it afcd php -S 0.0.0.0:4322
+: 1740563703:0;docker exec -it afcd php -S 0.0.0.0:14322
+: 1740563725:0;docker exec -it afcd php -S 0.0.0.0:3000
+: 1740563737:0;ls
+: 1740563743:0;docker exec -it afcd php -S 0.0.0.0:3000 .
+: 1740563756:0;docker exec -it afcd php -S 0.0.0.0:3000 index.html
+: 1740563767:0;docker exec -it afcd php -S 0.0.0.0:3000 
+: 1740563799:0;python -m http.server 
+: 1740563805:0;python -m http.server -p 4322
+: 1740563814:0;python -m http.server --port=4322
+: 1740563820:0;python -m http.server 4322
+: 1740563847:0;git status
+: 1740627053:0;npm run dev
+: 1740628187:0;git status
+: 1740628188:0;git add .
+: 1740628200:0;git commit -m 'update home'
+: 1740628202:0;git status
+: 1740628203:0;git push
+: 1740629413:0;git status
+: 1740629415:0;git add .
+: 1740629419:0;git commit -m 'update about'
+: 1740629421:0;git status
+: 1740629424:0;git push
+: 1740641839:0;git status
+: 1740641911:0;ls
+: 1740642414:0;git status
+: 1740642427:0;mv .github .github_bak
+: 1740642429:0;git status
+: 1740642430:0;git add .
+: 1740642443:0;mv .github_bak github_cicd
+: 1740642444:0;git status
+: 1740642458:0;mv github_cicd .github_actions
+: 1740642459:0;git status
+: 1740642460:0;gti add .
+: 1740642464:0;git status
+: 1740642465:0;git add .
+: 1740642477:0;git commit -m 'remove github action'
+: 1740642479:0;git status
+: 1740642483:0;git push
+: 1740643515:0;ls src/content
+: 1740643519:0;ls src/content/blog
+: 1740643577:0;mkdir src/content/blog/drafts
+: 1740643594:0;mv src/content/blog/hello.md src/content/blog/drafts
+: 1740644237:0;touch src/content/blog/2025-02-12-pve7-changelog.md
+: 1740644641:0;mkdir src/content/blog/changelogs
+: 1740644652:0;cd src/content/blog
+: 1740644653:0;ls
+: 1740644661:0;mv 2025-02-12-pve7-changelog.md changelogs
+: 1740644665:0;tree .
+: 1740646062:0;ls
+: 1740646064:0;cd changelogs
+: 1740646064:0;ls
+: 1740646079:0;cp 2025-02-12-pve7-changelog.md 2025-02-14-pve7-changelog.md
+: 1740646204:0;cd ..
+: 1740646209:0;mv drafts/hello.md .
+: 1740648611:0;cd changelogs
+: 1740648611:0;ls
+: 1740648618:0;cp 2025-02-12-pve7-changelog.md 2025-02-13-pve7-changelog.md
+: 1740649182:0;git status
+: 1740649190:0;git add .
+: 1740649217:0;git commit -m 'çƒ¹¼å¸ƒ£æƒ»´æƒ¶°æƒ·¥èªƒ¬'
+: 1740649220:0;git push
+: 1740971173:0;cd src/content/blog
+: 1740971174:0;ls
+: 1740971179:0;ls -al
+: 1740971182:0;git pull
+: 1740971187:0;cd changelogs
+: 1740971188:0;ls
+: 1740971213:0;cp 2025-02-13-pve7-changelog.md 2025-03-03-pve7-changelog.md
+: 1740972016:0;npm run dev
+: 1740972303:0;git status
+: 1740972304:0;git add .
+: 1740972314:0;git status
+: 1740972328:0;git diff .gitignore
+: 1740972332:0;git status
+: 1740972334:0;git add .
+: 1740972385:0;git commit -m 'today blog'
+: 1740972392:0;git status
+: 1740972394:0;git push
+: 1742373207:0;PORT=13000 pnpm run start:dev
+: 1742373242:0;npm run lint
+: 1742373257:0;npm run format
+: 1742373324:0;PORT=13000 pnpm run start:dev
+: 1742972417:0;npm run dev
+: 1742972618:0;cd src/components
+: 1742972618:0;ls
+: 1742972622:0;cd ..
+: 1742972622:0;ls
+: 1742972626:0;cd pages
+: 1742972627:0;ls
+: 1742972630:0;cd blog
+: 1742972631:0;ls
+: 1742972632:0;cd ..
+: 1742972633:0;cd. .
+: 1742972634:0;ls
+: 1742972637:0;cd ..
+: 1742972642:0;cd content
+: 1742972643:0;ls
+: 1742980477:0;git status
+: 1742980639:0;npm run start:dev
+: 1742980663:0;npm run start:dev --port=8000
+: 1742980683:0;npm run start:dev
+: 1744344616:0;git pull
+: 1744344638:0;npm run dev
+: 1744344841:0;cd src/sy
+: 1744344843:0;cd src/styles
+: 1744344843:0;ls
+: 1744344862:0;touch bearblog.css
+: 1744344870:0;rm bearblog.css
+: 1744344877:0;mv global.css bearblog.css
+: 1744344882:0;touch global.css
+: 1746508011:0;git status
+: 1746508546:0;git add .
+: 1746508563:0;git commit -m 'åƒ¥§å®¹è®ƒªæƒ»´åƒ¥§å®¹è®ƒªæƒ»´'
+: 1746508566:0;git status
+: 1746508574:0;git commit --amend
+: 1746508581:0;git status
+: 1746508583:0;git log
+: 1746508586:0;git push
+: 1746508651:0;npm run deploy:vercel
+: 1746508721:0;l --prod
+: 1746508725:0;vercel --prod
+: 1746511342:0;cat .env
+: 1746525328:0;git status
+: 1746525329:0;git pushg
+: 1746525332:0;git push
+: 1746606746:0;npm run dev
+: 1746611165:0;git status
+: 1746611167:0;git add .
+: 1746611182:0;git commit -m 'docs: 0505 MT-15'
+: 1746611184:0;git  push
+: 1746677891:0;npm install remark-external-links
+: 1746689058:0;git status
+: 1746689065:0;git add package*.json
+: 1746689068:0;git add astro.config.mjs
+: 1746689069:0;git status
+: 1746689108:0;git commit -m 'feat: md æƒ¯ƒ²ä»¶; æ¸²æƒ¿ƒ³åƒ­€åƒ¨ƒ¦åƒ¥§å¤ƒ¶éƒ£¨é€£çµƒ°'
+: 1746689110:0;git status
+: 1746689126:0;git add .
+: 1746689173:0;git commit -m 'docs: MT-15 ride exp'
+: 1746689177:0;git status
+: 1746689178:0;git push
+: 1746689182:0;npm run build
+: 1749629453:0;source "/opt/cursor-bin/usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh"
+: 1749629949:0;cp ../escrow/.vscode ./
+: 1749629952:0;vim .vscode
+: 1749629957:0;vim .vscode/settings.json
+: 1749629962:0;rm .vscode/settings.json
+: 1749698216:0;svn st
+: 1749698227:0;cd ../cloudbid
+: 1749698229:0;svn st
+: 1749698235:0;svn info
+: 1749699289:0;svn dif
+: 1749699289:0;svn diff
+: 1749699341:0;cp ../cloudbid/add*.sh ./
+: 1749699342:0;ls
+: 1749699346:0;./addslash.sh
+: 1749699449:0;./addversion.sh
+: 1749699473:0;svn sr
+: 1749699474:0;svn st
+: 1749699501:0;./addversion.sh
+: 1749699506:0;./addslash.sh
+: 1749699556:0;svn st
+: 1749699581:0;svn ci -m 'feat: m2319 ç¶²åƒ¿ƒ¿æƒµ´åƒ°ƒ¨èª¿æƒµ´'
+: 1749699583:0;svn st
+: 1749719121:0;source "/opt/cursor-bin/usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh"
+: 1749719143:0;npm run dev
+: 1753087930:0;cd tools
+: 1753087930:0;ls
+: 1753087934:0;cd docker
+: 1753087934:0;ls
+: 1753087945:0;docker-compose up -f docker-compose.yml
+: 1753087968:0;docker-compose -f docker-compose.yml up
+: 1753088931:0;docker-compose -f docker-compose.yml status
+: 1753088940:0;docker-compose -f docker-compose.yml ps
+: 1753088980:0;docker-compose -f docker-compose.yml up
+: 1753089118:0;docker-compose run builder bash
+: 1753089740:0;docker-compose -f docker-compose.yml up
+: 1753089759:0;docker-compose -f docker-compose.yml up -d db
+: 1753089768:0;docker-compose -f docker-compose.yml run builder
+: 1753089979:0;docker-compose -f docker-compose.yml build builder
+: 1753090363:0;docker-compose -f docker-compose.yml run builder
+: 1753090810:0;docker-compose -f docker-compose.yml down
+: 1753090820:0;git status
+: 1753090899:0;docker-compose build builder
+: 1753091331:0;docker-compose run builder
+: 1753091382:0;docker-compose build builder
+: 1753154974:0;docker-compose run builder
+: 1753155060:0;docker-compose build builder
+: 1753155203:0;docker-compose run builder
+: 1753155273:0;docker-compose build builder
+: 1753155423:0;docker-compose run builder
+: 1753155741:0;dpkg -L libm-dev libc6-dev | grep libm.a
+: 1753155792:0;git status
+: 1753155798:0;git reset --hard
+: 1753155805:0;git status
+: 1753156053:0;yay -Q zlib
+: 1753156071:0;yay -Q base-devel cmake mariadb-libs openssl zlib
+: 1753156089:0;ls
+: 1753156096:0;cd ../..
+: 1753156096:0;ls
+: 1753156101:0;cd cbuild
+: 1753156102:0;ls
+: 1753156133:0;git status
+: 1753156151:0;source "/opt/cursor-bin/usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh"
+: 1753156270:0;find cbuild -type f -executable | grep -E 'map-server|char-server|login-server' || echo 'no-server-binary'
+: 1753156317:0;source "/opt/cursor-bin/usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh"
+: 1753156385:0;find cbuild -type f -executable | grep -E 'map-server|char-server|login-server' || echo 'no-server-binary'
+: 1754897154:0;npm run dev
+: 1754897160:0;nvm list
+: 1754897183:0;nvm use 20
+: 1754897188:0;npm run dev
+: 1754897201:0;npm run web
+: 1754897202:0;npm run webb
+: 1754897546:0;svn up
+: 1754897622:0;ls -al
+: 1754897634:0;ls js/setting.js -al
+: 1754898031:0;svn st
+: 1754898036:0;cd js
+: 1754898036:0;ls
+: 1754898056:0;rm setting.16.eval.js
+: 1754898057:0;ls
+: 1754898069:0;mv setting.40.k242.js ../tmp/settings/
+: 1754898070:0;ls
+: 1754898072:0;svn st
+: 1754898078:0;rm setting.14.prod.js
+: 1754898084:0;rm setting.js
+: 1754898086:0;svn st
+: 1754898101:0;ln -s ../tmp/settings/setting.40.k242.js setting.js
+: 1754898102:0;svn st
+: 1754898110:0;npm run webb
+: 1754900025:0;git status
+: 1754900030:0;cd ..
+: 1754900031:0;git status
+: 1754900041:0;ls
+: 1754900043:0;svn st
+: 1754900054:0;svn diff
+: 1754900082:0;snv st
+: 1754900084:0;svn st
+: 1754900117:0;svn ci -m 'feat: #2201 èª¿æƒµ´åƒªƒ€å¯ƒ¦apié€åƒ§ºæƒ¶¹å¼ƒ¯'
+: 1754900120:0;svn st
+: 1754901328:0;ls
+: 1754902187:0;svn st
+: 1754902191:0;svn info
+: 1754902201:0;svn diff -r175:176
+: 1754902214:0;svn diff -r175:177
+: 1754903254:0;svn st
+: 1754903255:0;svn diff
+: 1754903296:0;svn st
+: 1754903309:0;svn ci -m 'fix: #2201 èª¿æƒµ´åƒ¯ƒ¶å€¼'
+: 1754903311:0;svn st
+: 1754904225:0;svn diff
+: 1754904252:0;svn ci -m 'fix: #2201 èƒ¨åƒ¶®åƒ‚ƒ¾åƒªƒ€company2'
+: 1754904254:0;svn st
+: 1754904359:0;svn up
+: 1754904361:0;snv info
+: 1754904365:0;svn info
+: 1754967300:0;svn st
+: 1754981228:0;npm run webb
+: 0:0;
+: 1754985535:0;svn log
+: 1754985537:0;svn log 
+: 1754985539:0;svn log  | less
+: 1754988381:0;svn st
+: 1754988387:0;svn diff
+: 1754989157:0;svn info
+: 1754989168:0;type snv
+: 1754989170:0;type svn
+: 1754989402:0;svn st
+: 1754989406:0;svn diff
+: 1754989732:0;:q
+: 1754989734:0;svn diff
+: 1754989762:0;svn ci -m 'fix: certis å¯«åƒ¥¥æƒ€¼å¼ƒ¯éƒ¬¯èª¤'
+: 1754989764:0;svn st
+: 1754990767:0;svn up
+: 1755154794:0;git status
+: 1755154802:0;git reset --hard
+: 1755154804:0;git status
+: 1755154817:0;rm src/components/WeatherCard.astro
+: 1755154822:0;rm src/pages/board.astro
+: 1755154823:0;git status
+: 1755154827:0;git fetch
+: 1755154832:0;git status
+: 1755154835:0;git pull
+: 1755154842:0;git log
+: 1755156354:0;npx dev
+: 1755156364:0;nvm list
+: 1755156377:0;nvm use 20
+: 1755156380:0;npx dev
+: 1755156407:0;nvm use 18
+: 1755156417:0;nvm list --installed
+: 1755156421:0;nvm list --help
+: 1755156428:0;nvm list 
+: 1755156442:0;nvm use 16
+: 1755156444:0;npx dev
+: 1755156453:0;nvm use 22
+: 1755156496:0;nvm install
+: 1755156501:0;nvm list
+: 1755156512:0;nvm use lts
+: 1755156521:0;nvm install --lis
+: 1755156529:0;nvm install --lts
+: 1755156537:0;nvm use --lts
+: 1755156553:0;npm run dev
+: 1755156559:0;npx dev
+: 1755156563:0;npm run dev
+: 1755157218:0;source "/opt/cursor-bin/usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh"
+: 1755158039:0;npm run dev
+: 1755163896:0;git status
+: 1755228949:0;svn up
+: 1755229022:0;svn diff
+: 1755229038:0;svn ci -m 'fix: remove version line from package.json'
+: 1755229255:0;cat js/version.js
+: 1755229847:0;svn diff
+: 1755229917:0;svn revert
+: 1755229920:0;svn diff
+: 1755229925:0;svn st
+: 1755229940:0;svn revert js/version.js
+: 1755229941:0;svn st
+: 1755230808:0;svn diff
+: 1755230822:0;svn log
+: 1755230826:0;svn log | less
+: 1755231065:0;svn diff
+: 1755231114:0;svn st
+: 1755231117:0;svn diff js/version.js
+: 1755231140:0;svn revert js/version.js
+: 1755231141:0;svn st
+: 1755237921:0;svn diff
+: 1755237923:0;svn st
+: 1755239162:0;svn up
+: 1755239186:0;svn diff package.json -r190:191
+: 1755239193:0;svn up
+: 1755574559:0;cp ../cloud_short/.devcontainer ./
+: 1755574604:0;docker ps
+: 1755574911:0;cp docker-compose.yml docker-compose.yml.bak
+: 1755574930:0;./vendor/bin/sail --help
+: 1755574966:0;./artisan sail --help
+: 1755574976:0;php artisan sail -h
+: 1755574992:0;php artisan sail:install
+: 1755576014:0;svn st
+: 1755576030:0;./vendor/bin/sail up
+: 1755585999:0;rm docker-compose.devcontainer.yml
+: 1755586000:0;svn st
+: 1755588415:0;svn diff phpunit.xml
+: 1755588440:0;svn revert phpunit.xml
+: 1755588441:0;svn st
+: 1755588456:0;svn up
+: 1755588480:0;svn st | grep '^?' | awk '{print $NF}'
+: 1755588486:0;svn add `svn st | grep '^?' | awk '{print $NF}'`
+: 1755588487:0;svn st
+: 1755588568:0;svn ci -m 'ci: éƒ¶ƒ«çƒ¹¼çƒ²°åƒ‚ƒ£å»ºç½®'
+: 1755588574:0;cat config/version.php
+: 1755588631:0;cp ../cloud_short/add*.sh
+: 1755588632:0;ls
+: 1755588640:0;cp ../cloud_short/add*.sh .
+: 1755588644:0;./addslash.sh
+: 1755588648:0;./addversion.sh
+: 1755588755:0;cat ../cloud_short
+: 1755588761:0;cat ../cloud_short/addversion.sh
+: 1755588777:0;diff addslash.sh addversion.sh
+: 1755588789:0;cp ../cloud_bid/addversion.sh ./
+: 1755588796:0;./addversion.sh
+: 1755589002:0;echo $PATH
+: 1755589015:0;type svn
+: 1755589069:0;$(svn update | tail -n1 | grep -Eo '[0-9]+')
+: 1755589076:0;svn update | tail -n1 | grep -Eo '[0-9]+'
+: 1755589095:0;svn info --show-item revision
+: 1755589223:0;svn update -q
+: 1755589236:0;$(svn info --show-itme revision)
+: 1755589241:0;$(svn info --show-item revision)
+: 1755589245:0;ecfho $(svn info --show-item revision)
+: 1755589248:0;echo $(svn info --show-item revision)
+: 1755589334:0;./addversion.sh
+: 1755589336:0;./addslash.sh
+: 1755589375:0;./addversion.sh
+: 1755589744:0;./addslash.sh
+: 1755589760:0;svn st
+: 1755589764:0;svn add addslash.sh
+: 1755589772:0;svn add addversion.sh
+: 1755589776:0;svn st
+: 1755589812:0;svn ci -m 'ci: è£ƒ¼çƒ©ƒ¨èƒ¹ƒ¿èƒ¨ƒ§shell script'
+: 1755589815:0;svn st
+: 1755589816:0;svn ci
+: 1755677825:0;cd ../cloud_bid
+: 1756274462:0;svn st
+: 1756274501:0;cd ../cloud_bid
+: 1756274502:0;ls
+: 1756274504:0;ls .devcontainer
+: 1756274513:0;svn st
+: 1756274520:0;cd ../cloud_short
+: 1756274524:0;svn revert .devcontainer
+: 1756274533:0;cp ../cloud_bid/.devcontainer .
+: 1756274537:0;svn st
+: 1757301679:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1761119345:0;svn st
+: 1761119347:0;svn diff
+: 1761119358:0;svn up
+: 1761119368:0;svn log -r545
+: 1761119379:0;svn ci -m 'fix: pdfinfo LD PATH'
+: 1761119380:0;svn st
+: 1761191525:0;ls vendor
+: 1761191531:0;php -v
+: 1761196841:0;svn st
+: 1761196858:0;svn ci -m 'fix: åƒ¥¬åƒ¯¸ç°½ç«ƒ€apiçƒ»®éƒ¬ƒ¤æªƒ‚æƒ¿¥æƒ¹‚çƒºƒ¤debug info'
+: 1761196861:0;svn st
+: 1761196867:0;./addversion.sh
+: 1761196868:0;./addslash.sh
+: 1761196875:0;svn ci -m 'fix: çƒ©ƒ¨èƒ¹ƒ¿'
+: 1761196876:0;svn st
+: 1761543091:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1761809646:0;source /home/ywl/Workspace/m2296-ckip/.venv/bin/activate
+: 1761809648:0;git status
+: 1761809695:0;git init
+: 1761809723:0;git config --global init.defaultBranch main
+: 1761809728:0;git branch -m main
+: 1761809731:0;git status
+: 1761810132:0;cat .gitignore
+: 1761810136:0;git status
+: 1761810144:0;cat test_app.py
+: 1761810155:0;git status
+: 1761810159:0;git add .
+: 1761810191:0;git commit -m 'feat: init with default feat'
+: 1761810193:0;git status
+: 1761810197:0;git remote add origin https://gitlab-devops.iii.org.tw/iiidevops/segment-ckip-service.git
+: 1761810201:0;git status
+: 1761810206:0;git push -u origin main
+: 1761810902:0;git status
+: 1761882113:0;ls
+: 1761882115:0;git status
+: 1761882153:0;git reset --HARD README.md
+: 1761882159:0;git reset --hard README.md
+: 1761882179:0;git checkout README.md
+: 1761882989:0;git status
+: 1761883380:0;git checkout README.md
+: 1761883385:0;git status
+: 1761883389:0;git add .
+: 1761883399:0;git commit -m 'feat: add gitlab-ci'
+: 1761883414:0;git commit --amend
+: 1761883483:0;git status
+: 1761883486:0;git push
+: 1761883748:0;git status
+: 1761883749:0;git add .
+: 1761883759:0;git commit -m 'ci: fix yml'
+: 1761883761:0;git push
+: 1761884142:0;git status
+: 1761884144:0;gti add .
+: 1761884149:0;git add .
+: 1761884152:0;git commit -m 'ci: fix yml'
+: 1761884154:0;git push
+: 1761886637:0;git status
+: 1761886683:0;git add .
+: 1761886685:0;git commit -m 'ci: fix yml'
+: 1761886687:0;git push
+: 1761886732:0;git add .
+: 1761886739:0;git commit -m 'ci: add tags'
+: 1761886742:0;git push
+: 1761887576:0;git status
+: 1761887579:0;git add .
+: 1761887598:0;git commit -m 'ci: update clone strategy'
+: 1761887599:0;git push
+: 1761890292:0;git add .
+: 1761890305:0;git commit -m 'ci: update stages'
+: 1761890307:0;git push
+: 1761892540:0;git reset 
+: 1761892543:0;git reset --HARD
+: 1761892548:0;git reset HEAD
+: 1761892550:0;git reset HEAD --hard
+: 1761892552:0;git status
+: 1761892553:0;git pull
+: 1761892896:0;set -x
+: 1761892907:0;set +x
+: 1761892909:0;set -e
+: 1761895067:0;source /home/ywl/Workspace/m2296-ckip/.venv/bin/activate
+: 1761895070:0;git pull
+: 1761898679:0;git pul
+: 1761898681:0;git pull
+: 1761901803:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1762163598:0;svn st
+: 1762163605:0;svn up
+: 1762249835:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1762402339:0;ls
+: 1762402885:0;ls ~/.config/systemd/user/
+: 1762402900:0;cat ~/.config/systemd/user/nextcloud.service
+: 1762402913:0;systemctl --user status nextcloud.service
+: 1762402944:0;ls
+: 1762402959:0;cp systemd/fastapi-ckip.service ~/.config/systemd/user/
+: 1762402969:0;ls ~/.config/systemd/user
+: 1762403002:0;code ~/.config/systemd/user/fastapi-ckip.service
+: 1762403025:0;systemctlu status fastapi-ckip.service
+: 1762403029:0;systemctlu start fastapi-ckip.service
+: 1762403031:0;systemctlu status fastapi-ckip.service
+: 1762418794:0;svn st
+: 1762418795:0;git status
+: 1762418799:0;git push
+: 1762419205:0;nvm use 20
+: 1762419209:0;gemini
+: 1762419275:0;source /home/ywl/Workspace/m2296-ckip/.venv/bin/activate
+: 1762419286:0;gemini
+: 1762419293:0;nvm use 20
+: 1762419295:0;gemini
+: 1762421157:0;git status
+: 1762421167:0;ls  *ci*
+: 1762421170:0;ls  "*ci*"
+: 1762421196:0;mv .gitlab-ci.yml .gitlab-ci.yml.todo
+: 1762421308:0;chmod +x deploy.sh
+: 1762421312:0;chmod +x deploy_k242.sh
+: 1762421312:0;ls
+: 1762421355:0;mv deploy_k242.sh upate_ask2025_ckip.sh
+: 1762421359:0;ls -al
+: 1762421362:0;git status
+: 1762421364:0;git add .
+: 1762421379:0;git commit -m 'feat: åƒ‚ƒ¾åƒªƒ€éƒ£¨ç½²èƒ¥³æƒ¼¬'
+: 1762421381:0;git status
+: 1762421384:0;git push
+: 1762421819:0;git status
+: 1762421855:0;git diff
+: 1762421872:0;git status
+: 1762421873:0;git add .
+: 1762421883:0;git commit -m 'fix: deploy.sh '
+: 1762421885:0;git push
+: 1762500415:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1763458458:0;./run.sh
+: 1763458619:0;ls .env
+: 1763458628:0;ls -al
+: 1763458639:0;ls .env2
+: 1763458641:0;ls .env
+: 1763458643:0;ls .env/ -al
+: 1763458648:0;cat .env
+: 1763458666:0;./run.sh
+: 1763459449:0;source /home/ywl/Workspace/python/task-service/venv/bin/activate
+: 1763522298:0;./run.sh
+: 1763527436:0;git status
+: 1763527443:0;git add .
+: 1763527451:0;git commit -m 'init'
+: 1763527453:0;git status
+: 1763527616:0;git remote add origin git@github.com:uWayLu/task-service.git
+: 1763527620:0;git branch -M main\
+git push -u origin main
+: 1763532379:0;ãƒ¤ƒ²svn diff
+: 1763532397:0;svn st
+: 1763532400:0;svn diff
+: 1763532402:0;./addversion.sh
+: 1763532404:0;./addslash.sh 
+: 1763532439:0;svn ci -m 'fix: #2363 èƒ§¨æƒ¹‚æƒ¯ƒ°æƒ¸ƒ§è©²è«ƒ«æ±‚phpè¨ƒ¸æƒ¦¶é«ƒ´æƒ¼€å¤§éƒ¹ƒ°åƒ¨¶'
+: 1763532440:0;svn st
+: 1763537800:0;git status
+: 1763537806:0;git add .
+: 1763537819:0;git commit -m 'docs; çƒ»®éƒ¬ƒ¤èª¿æƒµ´'
+: 1763537820:0;svn st
+: 1763537823:0;git push
+: 1763537827:0;git status
+: 1763538645:0;pip install -r requirements.txt
+: 1763538660:0;./run.sh
+: 1763538784:0;git status
+: 1763538785:0;git add .
+: 1763538809:0;git commit -m 'feat: pdfè§£æƒ¾ƒ°æ¸¬è©¦èƒ¨ƒ§æƒ¶ƒ§ä»¶'
+: 1763538814:0;git push
+: 1763538817:0;git status
+: 1763538846:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf
+: 1763538850:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -v
+: 1763538852:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -VV
+: 1763538863:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -h
+: 1763538875:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -v
+: 1763539213:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -v --password=T123748288
+: 1763540478:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -v 
+: 1763541202:0;source /home/ywl/Workspace/python/task-service/venv/bin/activate
+: 1763541203:0;./setup.sh
+: 1763541212:0;./run.sh
+: 1763541216:0;python test_pdf_parser.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -v 
+: 1763542273:0;git status
+: 1763542275:0;git add .
+: 1763542300:0;gti commit -m 'feat: pdf è§£æƒ¾ƒ°æƒ´¯æƒ¯´åƒªƒ€å¯ƒ¦'
+: 1763542304:0;git commit -m 'feat: pdf è§£æƒ¾ƒ°æƒ´¯æƒ¯´åƒªƒ€å¯ƒ¦'
+: 1763542307:0;git push
+: 1763542312:0;git status
+: 1763544337:0;pip install -r requirements.txt
+: 1763544344:0;./run.sh
+: 1763544423:0;python test_privacy.py\
+
+: 1763544643:0;python test_pdf_masking.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf
+: 1763544653:0;python test_pdf_masking.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -v
+: 1763544658:0;python test_pdf_masking.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf 
+: 1763544715:0;python test_pdf_masking.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf
+: 1763544865:0;diff output/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦_masked.txt output/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦_original.txt
+: 1763544890:0;diff output/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦_original.txt output/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦_masked.txt
+: 1763546630:0;./test_extraction.py
+: 1763605163:0;python test_extraction.py "113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf" --save-json
+: 1763605176:0;python test_extraction.py "test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf" --save-json
+: 1763606141:0;git status
+: 1763606152:0;pip install -r requirements.txt
+: 1763606159:0;./run.sh
+: 1763606177:0;python test_pdf_masking.py test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf 
+: 1763606561:0;git status
+: 1763606668:0;git status 
+: 1763606670:0;git add .
+: 1763606701:0;git commit -m '(wip) feat: è³ƒ§æƒ¶ƒ¹æ¸ƒ¥æ´ƒ·'
+: 1763606703:0;svn st
+: 1763606705:0;git status
+: 1763606706:0;gti pus
+: 1763606710:0;git push
+: 1763608056:0;curl -X POST http://localhost:12345/api/webhook/gmail \\
+  -F "file=@113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf" \\
+  -F "document_type=credit_card" \\
+  -F "structured=true"
+: 1763608071:0;curl -X POST http://localhost:12345/api/webhook/gmail \\
+  -F "file=@test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf" \\
+  -F "document_type=credit_card" \\
+  -F "structured=true"
+: 1763953084:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1763974729:0;python cli.py
+: 1763974738:0;source venv/bin/activate
+: 1763974741:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1763974743:0;source venv/bin/activate
+: 1763974748:0;python cli.py
+: 1763974778:0;./cli.py parse test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf
+: 1763974906:0;./cli.py parse test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -vv
+: 1763974907:0;./cli.py parse test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -v
+: 1763974910:0;./cli.py parse test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf --v
+: 1763974912:0;./cli.py parse test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf 
+: 1763977617:0;./cli.py parse test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf -h
+: 1763977626:0;./cli.py 
+: 1763977645:0;./cli.py mask test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf --output output
+: 1763977655:0;./cli.py mask test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf --output output/masked.txt
+: 1763977722:0;git commit -am '(wip) finance pdf parser'
+: 1763977723:0;git status
+: 1763977724:0;git push
+: 1764040678:0;./cli.py mask test_files/113å¹´08æƒ¼ƒ¨å¯ƒ¬é‚¦.pdf --output output/masked.txt
+: 1764051400:0;git status
+: 1764051401:0;git add .
+: 1764051426:0;git commit -m 'feat: åƒ‚ƒ¾åƒªƒ€æƒ®ƒ²éƒ¹¤èƒ§ªè¨‚å§ƒ³åƒ°ƒ­ä¹ƒ«åƒªƒ¿èƒ£½'
+: 1764051428:0;svn st
+: 1764051431:0;git fetch
+: 1764051436:0;git status
+: 1764051439:0;git push
+: 1765512176:0;du -hs .
+: 1765512184:0;du -hs ./*
+: 1765512215:0;cd ..
+: 1765512238:0;cp ./new_survey_item ./ask/storage/fork
+: 1766473224:0;docker ps
+: 1768286435:0;ls
+: 1769068953:0;svn st
+: 1769068955:0;git stauts
+: 1769068959:0;git status
+: 1769069437:0;astro dev
+: 1769069443:0;npm dev
+: 1769069446:0;npm run devvv
+: 1769069447:0;npm run dev
+: 1769069474:0;npx @astrojs/upgrade
+: 1769069874:0;npm run dev
+: 1769069887:0;git status
+: 1769069897:0;git reset --hard
+: 1769069899:0;git status
+: 1769069907:0;npm run dev
+: 1769070286:0;mkdir rules
+: 1769070287:0;ls
+: 1769070289:0;cd rules
+: 1769070289:0;ls
+: 1769070306:0;rm rules
+: 1769070308:0;rm rules -d
+: 1769070313:0;cd ..
+: 1769070319:0;rm rules
+: 1769070321:0;rm rules -d
+: 1769070322:0;lsd
+: 1769070324:0;ls
+: 1769070329:0;mkdir -p .cursor/rules
+: 1769070332:0;cd .cursor/rules/
+: 1769070334:0;ls
+: 1769070676:0;cd ..
+: 1769070678:0;rm -d rules
+: 1769070680:0;touch rules
+: 1769070688:0;cursor ./rules
+: 1769071483:0;ls
+: 1769071496:0;cd ..
+: 1769071509:0;mv README.md README.en.md
+: 1769071514:0;touch README.md
+: 1769071515:0;vim README.
+: 1769071519:0;vim README.md
+: 1769071581:0;ls
+: 1769071585:0;ls docs
+: 1769071593:0;mkdir docs
+: 1769071595:0;touch docs/decisions.md
+: 1769071600:0;cursor docs/decisions.md
+: 1769071673:0;svn st
+: 1769071675:0;git status
+: 1769071707:0;ls     src/components/ImageGallery.astro\
+        src/components/PostCard.astro\
+        src/components/TopicCard.astro\
+        src/components/TopicModal.astro\
+        src/content/instagram/\
+        src/content/topic/\
+        src/layouts/InstagramPost.astro\
+        src/pages/api/\
+        src/pages/instagram/\
+        src/pages/topic/
+: 1769071712:0;rm     src/components/ImageGallery.astro\
+        src/components/PostCard.astro\
+        src/components/TopicCard.astro\
+        src/components/TopicModal.astro\
+        src/content/instagram/\
+        src/content/topic/\
+        src/layouts/InstagramPost.astro\
+        src/pages/api/\
+        src/pages/instagram/\
+        src/pages/topic/
+: 1769071725:0;ld
+: 1769071726:0;pwd
+: 1769071728:0;cd ../..
+: 1769071728:0;ls
+: 1769071729:0;cd ..
+: 1769071730:0;ls
+: 1769071730:0;pwd
+: 1769071738:0;ls
+: 1769071745:0;rm     src/components/ImageGallery.astro\
+        src/components/PostCard.astro\
+        src/components/TopicCard.astro\
+        src/components/TopicModal.astro\
+        src/content/instagram/\
+        src/content/topic/\
+        src/layouts/InstagramPost.astro\
+        src/pages/api/\
+        src/pages/instagram/\
+        src/pages/topic/
+: 1769071761:0;cd ../..
+: 1769071762:0;ls
+: 1769071763:0;cd ..
+: 1769071767:0;echo "    src/components/ImageGallery.astro\
+        src/components/PostCard.astro\
+        src/components/TopicCard.astro\
+        src/components/TopicModal.astro\
+        src/content/instagram/\
+        src/content/topic/\
+        src/layouts/InstagramPost.astro\
+        src/pages/api/\
+        src/pages/instagram/\
+        src/pages/topic/"
+: 1769071780:0;echo "    src/components/ImageGallery.astro\
+        src/components/PostCard.astro\
+        src/components/TopicCard.astro\
+        src/components/TopicModal.astro\
+        src/content/instagram/\
+        src/content/topic/\
+        src/layouts/InstagramPost.astro\
+        src/pages/api/\
+        src/pages/instagram/\
+        src/pages/topic/" | xargs rm
+: 1769071795:0;git status
+: 1769071805:0;echo "    src/components/ImageGallery.astro\
+        src/components/PostCard.astro\
+        src/components/TopicCard.astro\
+        src/components/TopicModal.astro\
+        src/content/instagram/\
+        src/content/topic/\
+        src/layouts/InstagramPost.astro\
+        src/pages/api/\
+        src/pages/instagram/\
+        src/pages/topic/" | xargs rm -d
+: 1769071815:0;echo "    src/components/ImageGallery.astro\
+        src/components/PostCard.astro\
+        src/components/TopicCard.astro\
+        src/components/TopicModal.astro\
+        src/content/instagram/\
+        src/content/topic/\
+        src/layouts/InstagramPost.astro\
+        src/pages/api/\
+        src/pages/instagram/\
+        src/pages/topic/" | xargs rm -r
+: 1769071820:0;svn st
+: 1769071822:0;git status
+: 1769073032:0;ls layouts
+: 1769073036:0;cd src
+: 1769073038:0;ls layouts
+: 1769073092:0;cd layouts
+: 1769073093:0;ls
+: 1769073097:0;less BlogPost.astro
+: 1769073135:0;git status
+: 1769073139:0;cd ../../
+: 1769073140:0;ls
+: 1769073142:0;git status
+: 1769075144:0;git log -p src/styles/global.css
+: 1769075150:0;git log -P src/styles/global.css
+: 1769075166:0;git log src/styles/global.css
+: 1769075170:0;git log -v src/styles/global.css
+: 1769075179:0;git describe src/styles/global.css
+: 1769075188:0;git log --name-only src/styles/global.css
+: 1769075196:0;git diff src/styles/global.css
+: 1769075203:0;git blame src/styles/global.css
+: 1769141059:0;git status
+: 1769141064:0;git add .
+: 1769141093:0;git commit -m 'feat: vibe coding settings and tiny change'
+: 1769141095:0;git status
+: 1769141097:0;git push
+: 1769150154:0;git status
+: 1769150155:0;gti add .
+: 1769150594:0;git status
+: 1769150604:0;git log
+: 1769153700:0;git status
+: 1769153701:0;git add .
+: 1769153706:0;git status
+: 1769153711:0;ls public
+: 1769153716:0;ls assets
+: 1769153718:0;ls
+: 1769153722:0;ls src
+: 1769153725:0;ls src/assets
+: 1769153732:0;git log
+: 1769153736:0;git status
+: 1769154027:0;git commit -m "feat: åƒ¼ƒ¶çƒ©ƒ§ key æµç¨ƒ«èƒ¨ƒ§æƒ¶ƒ§ç«ƒ€åƒ¼ƒ¶çƒ©ƒ§è·¯å¾ƒ±çµ±ä¸€"
+: 1769154029:0;git status
+: 1769154032:0;git push
+: 1769158493:0;git stauts
+: 1769158494:0;ls
+: 1769158496:0;git status
+: 1769158499:0;git diff
+: 1769158505:0;git log
+: 1769158606:0;git status
+: 1769160945:0;ls src/content
+: 1769160949:0;ls src/content/
+: 1769160954:0;ls src/content/photosets
+: 1769161625:0;git status
+: 1769161834:0;npm run dev
+: 1769398897:0;git status
+: 1769398901:0;git puish
+: 1769398903:0;git push
+: 1769398907:0;npm run dev
+: 1769399445:0;git status
+: 1769400676:0;ls
+: 1769400703:0;mkdir storage
+: 1769400705:0;git status
+: 1769400708:0;cd storage
+: 1769400709:0;ls
+: 1769400714:0;pwd | wl-copy
+: 1769400730:0;ls 
+: 1769404688:0;npm run dev
+: 1769404712:0;ls
+: 1769404720:0;cd ..
+: 1769404728:0;ls public/photos/2025/05/motor-gear/
+: 1769404732:0;ranger . public/photos/2025/05/motor-gear/
+: 1769407940:0;git status
+: 1769409626:0;npm i -D astro-icon
+: 1769409649:0;npm audit
+: 1769409654:0;npm audit fix
+: 1769410297:0;npm run dev
+: 1769412646:0;git status
+: 1769413223:0;vim .gitignore
+: 1769413241:0;rm -r storage
+: 1769413243:0;ls
+: 1769413247:0;git status
+: 1769413261:0;cd scripts
+: 1769413829:0;ls
+: 1769413836:0;cd ..
+: 1769413836:0;ls
+: 1769414308:0;ls package.json
+: 1769414311:0;less package.json
+: 1769416594:0;git status
+: 1769416599:0;git pull
+: 1769416610:0;git idff
+: 1769416613:0;git log
+: 1769416636:0;git branches
+: 1769416639:0;git branchs
+: 1769416641:0;git branch
+: 1769416653:0;git log --remote
+: 1769416658:0;git status
+: 1769416667:0;git pull
+: 1769416685:0;git pull.ff
+: 1769416702:0;git diff origin/master
+: 1769416715:0;git merge
+: 1769416988:0;git status
+: 1769416999:0;git add .
+: 1769417004:0;git commit
+: 1769417011:0;git status
+: 1769417013:0;git push
+: 1769417449:0;git status
+: 1769417480:0;git add .
+: 1769417491:0;git commit -m 'fix: merged missing'
+: 1769417492:0;git pish
+: 1769417494:0;git push
+: 1769417625:0;git status
+: 1769417626:0;git diff
+: 1769417631:0;git status
+: 1769421908:0;git push
+: 1770370367:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1772506375:0;svn up
+: 1772690680:0;source /home/ywl/Workspace/m2296-ckip/.venv/bin/activate
+: 1772693078:0;docker-compose -f deploy/docker-compose.yml up -d
+: 1772693710:0;podman build -t ckip-service:latest -f deploy/Dockerfile .
+: 1772693883:0;sudo podman build -t ckip-service:latest -f deploy/Dockerfile .
+: 1772694592:0;curl http://localhost:8000/status
+: 1772694640:0;docker run -d --name ckip-test -p 8000:8000 ckip-service:latest
+: 1772694647:0;docker ps
+: 1772694770:0;docker rm -f ckip-test
+: 1772697401:0;git log --oneline | fzf --preview 'git show {1}'
+: 1772697568:0;git log --oneline 
+: 1772697580:0;git log --oneline | fzf --preview 'git show {1}'
+: 1772698536:0;git status
+: 1772698594:0;git add deploy/ && \\
+git commit -m "feat: #2463 å»ºç«ƒ« CKIP åƒ¨ƒ¦è©ƒ¾æƒ¼ƒ­åƒ«ƒ¹å®¹åƒ¹¨åƒ¬ƒ¶éƒ£¨ç½²çƒ²°åƒ‚ƒ£\
+\
+- æƒ¶°åƒ‚ƒ¾ deploy/Dockerfile (Python 3.11 åƒ¿ºåºƒµ)\
+- æƒ¶°åƒ‚ƒ¾ deploy/docker-compose.yml (æƒ¼¬åƒ¼°éƒ¶ƒ«çƒ¹¼çƒ´¨)\
+- æƒ¶°åƒ‚ƒ¾ deploy/ckip.container (æ­£å¼ƒ¯æ©ƒ¿ Quadlet çƒ´¨)\
+- æƒ¶°åƒ‚ƒ¾ deploy/DEPLOY.md (éƒ£¨ç½²èƒ¨ƒ§æ¸¬è©¦èªªæƒ¸ƒ®)"
+: 1772698597:0;git status
+: 1772698598:0;git push
+: 1772698601:0;git fetch
+: 1772698607:0;git log --oneline | fzf --preview 'git show {1}'
+: 1772698638:0;export FZF_DEFAULT_OPTS="--height 80% --layout=reverse --border"
+: 1772698639:0;git log --oneline | fzf --preview 'git show {1}'
+: 1772698655:0;export FZF_DEFAULT_OPTS="--height 200% --layout=reverse --border"
+: 1772698655:0;git log --oneline | fzf --preview 'git show {1}'
+: 1772698667:0;export FZF_DEFAULT_OPTS="--height 20% --layout=reverse --border"
+: 1772698668:0;git log --oneline | fzf --preview 'git show {1}'
+: 1772698677:0;export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --border"
+: 1772698677:0;git log --oneline | fzf --preview 'git show {1}'
+: 1772698773:0;git diff {} | delta
+: 1772698781:0;git diff 
+: 1772698787:0;git diff HEAD~
+: 1772698791:0;git diff HEAD~ | delta
+: 1772698834:0;git log --oneline | fzf --preview 'git show {1} | delta'
+: 1772698969:0;git status
+: 1772698971:0;git log
+: 1772699016:0;ls
+: 1772699026:0;git log -p
+: 1772699033:0;git show -p
+: 1772699465:0;git status
+: 1772699474:0;git log -p
+: 1772699506:0;git log --oneline | fzf --preview 'git show {1} | delta'
+: 1772775537:0;git status
+: 1772777345:0;git push
+: 1772779784:0;cdf 
+: 1772779787:0;ls
+: 1772779792:0;touch tmp.md
+: 1772781782:0;mv tmp.md NOTE.md
+: 1772781790:0;ls
+: 1772781796:0;ls tmp.md
+: 1772781812:0;svn st
+: 1772781815:0;git status
+: 1772781818:0;rm tmp.md
+: 1772781820:0;git status
+: 1772781849:0;git add .
+: 1772781871:0;git commit -m 'docs: æƒ¶°åƒ‚ƒ¾äººéƒƒ¾çƒ´¨çƒ¹¼å¸ƒ£æƒ¶ƒ§ä»¶'
+: 1772781873:0;git status
+: 1772781874:0;git push
+: 1772790919:0;cd ..
+: 1772790928:0;tree ./dev-ops
+: 1772790946:0;tree -L 2 ./.cursor/
+: 1777964495:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh

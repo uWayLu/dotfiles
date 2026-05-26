@@ -116,11 +116,22 @@ svndf() {
     | fzf --preview 'p=$(echo "{}" | awk "{print \$2}"); [[ -n "$p" ]] && svn diff -- "$p"'
 }
 
+#svnlogf() {
+#  command -v svn >/dev/null 2>&1 || { echo "缺 svn"; return 1; }
+#  svn log \
+#    | grep '^r[0-9]\+ ' \
+#    | fzf --preview 'r=$(echo "{}" | cut -d"|" -f1 | tr -d "r "); [[ -n "$r" ]] && svn diff -c "$r"'
+#}
+
 svnlogf() {
   command -v svn >/dev/null 2>&1 || { echo "缺 svn"; return 1; }
+
   svn log \
     | grep '^r[0-9]\+ ' \
-    | fzf --preview 'r=$(echo "{}" | cut -d"|" -f1 | tr -d "r "); [[ -n "$r" ]] && svn diff -c "$r"'
+    | fzf --preview '
+        r=$(echo {} | awk "{print \$1}" | sed "s/^r//")
+        [ -n "$r" ] && svn diff -c "$r"
+      '
 }
 
 svncatf() {

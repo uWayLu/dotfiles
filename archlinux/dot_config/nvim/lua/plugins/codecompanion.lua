@@ -87,6 +87,15 @@ return {
             })
           end,
         },
+        acp = {
+          gemini_cli = function()
+            return require("codecompanion.adapters").extend("gemini", {
+              defaults = {
+                auth_method = "oauth-personal",
+              },
+            })
+          end,
+        },
       },
 
       interactions = {

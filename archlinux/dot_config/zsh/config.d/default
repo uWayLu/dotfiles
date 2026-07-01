@@ -18,3 +18,4 @@ export ELECTRON_OZONE_PLATFORM_HINT=auto
 #  $HOME/.local/bin/wrappedhl
 #fi
 
+source <(fzf --zsh)

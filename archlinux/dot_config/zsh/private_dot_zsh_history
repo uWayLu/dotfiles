@@ -1224,3 +1224,285 @@ git commit -m "feat: #2463 å»ºç«ƒ« CKIP åƒ¨ƒ¦è©ƒ¾æƒ¼ƒ­åƒ«ƒ¹å®¹åƒ¹¨åƒ¬ƒ¶éƒ£¨ç½²çƒ
 : 1772790928:0;tree ./dev-ops
 : 1772790946:0;tree -L 2 ./.cursor/
 : 1777964495:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1780898325:0;cp ../../php/cloud_short/.cursor* .
+: 1780898348:0;rm .cursor
+: 1780898350:0;rm .cursorrules
+: 1780898400:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1780898509:0;ln -s /home/ywl/Workspace/php/99-cursorrules/* .
+: 1780898517:0;svn st
+: 1780898550:0;svn add `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898554:0;svn add `svn st | grep '^?' | awk '{print $NF-1}'`
+: 1780898556:0;svn add `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898568:0;echo `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898576:0;svb st
+: 1780898578:0;svn st
+: 1780898584:0;svn rm `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898589:0;svn rempve `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898593:0;svn remove `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898598:0;svn del `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898600:0;svn help
+: 1780898612:0;svn st
+: 1780898619:0;svn del `svn st | grep '^A' | awk '{print $NF}'`
+: 1780898621:0;svn st
+: 1780898631:0;svn del `svn st | grep '^A' | awk '{print $NF}'` --force
+: 1780898633:0;svn st
+: 1780898668:0;svn revert `svn st | grep '^A' | awk '{print $NF}'` --force
+: 1780898669:0;svn st
+: 1780898678:0;svn revert -R .
+: 1780898679:0;svn st
+: 1780898684:0;svn del `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898689:0;rm `svn st | grep '^?' | awk '{print $NF}'`
+: 1780898691:0;svn st
+: 1780898693:0;rm -r .vscode
+: 1780898694:0;svn st
+: 1780898696:0;svn up
+: 1780898697:0;svn st
+: 1780898713:0;ln -s /home/ywl/Workspace/php/99-cursorrules/cloud_bid_client/* .
+: 1780898715:0;svn st
+: 1780898718:0;ls -al
+: 1780898720:0;svn st 
+: 1780898723:0;ln -s /home/ywl/Workspace/php/99-cursorrules/cloud_bid_client/.* .
+: 1780898724:0;svn st
+: 1780898765:0;ls .cursor
+: 1780898770:0;ls .cursorrules
+: 1780899114:0;php -v
+: 1780901559:0;svn st
+: 1780902036:0;svn diff package.json
+: 1780902072:0;svn st
+: 1780902082:0;ls -al .cursor*
+: 1780902112:0;ls -al .cursor* dev-ops .cursorrules
+: 1780902122:0;ls
+: 1780902125:0;svn st
+: 1780902177:0;svn diff
+: 1780902192:0;svn ci -m 'fix: æƒ®ƒ²éƒ¹¤ workdlow file'
+: 1780902205:0;cat addversion.sh
+: 1780902211:0;cat js/ve
+: 1780902212:0;cat js/version.js
+: 1780902222:0;ls
+: 1780902245:0;cat addversion.bat
+: 1780902257:0;cat js/version.js
+: 1780902262:0;svn st
+: 1780902267:0;./addversion.sh
+: 1780902269:0;./addslash.sh
+: 1780902270:0;svn st
+: 1780902274:0;cat js/ve
+: 1780902275:0;cat js/version.js
+: 1780902518:0;mktemp --help
+: 1780902537:0;svn st
+: 1780902604:0;svn diff addversion.sh
+: 1780902629:0;./addversion.sh
+: 1780902630:0;svn st
+: 1780902636:0;cat js/version.js
+: 1780902923:0;svn log |less
+: 1780902994:0;svn st
+: 1780903000:0;svn | less
+: 1780903004:0;svn log | less
+: 1780903012:0;svn up
+: 1780903014:0;svn st
+: 1780903018:0;svn log | less
+: 1780903024:0;svn log -v | less
+: 1780903038:0;ls
+: 1780903053:0;svn st
+: 1780903059:0;cat addversion.
+: 1780903060:0;cat addversion.sh
+: 1780903062:0;svn diff
+: 1780903071:0;svn revert addversion.sh
+: 1780903072:0;svn st
+: 1780903729:0;npx webb
+: 1780903753:0;nvm list
+: 1780903774:0;npm run webb
+: 1780903785:0;nvm use 18
+: 1780903788:0;nvm use 16
+: 1780903792:0;npx webb
+: 1780903798:0;npm run webb
+: 1780903808:0;nw-sdk
+: 1780903825:0;type nw-sdk
+: 1780905186:0;npx webb
+: 1780905190:0;npm run webb
+: 1780905373:0;svn st
+: 1780905389:0;./addversion.sh
+: 1780905391:0;svn st
+: 1780905409:0;svn ci -m 'fix: package.json scripts'
+: 1780905411:0;svn st
+: 1780905418:0;cat js/version.js
+: 1780905515:0;npx webb
+: 1780905522:0;npx run webb
+: 1780905529:0;npm run webb
+: 1780906368:0;svn str
+: 1780906369:0;svn st
+: 1780906373:0;ls -al
+: 1780906448:0;svn st
+: 1780906818:0;svn revert js/utility.js
+: 1780906819:0;svn st
+: 1780908300:0;ls js/setting
+: 1780908301:0;ls js/setting.js
+: 1780908319:0;npm run webb
+: 1780910350:0;svn st
+: 1780910364:0;./addversion.sh
+: 1780910368:0;svn st
+: 1780910406:0;svn commit -m "feat: #2581 enc API ä¸ƒªå‚³åƒ‚ƒ¾åƒªƒ€ privacy_consent æ¬ƒ¤ä½ƒ­\
+\
+- utility.js æƒ¶°åƒ‚ƒ¾ readPrivacyConsentFromFileã€buildPrivacyConsentEncData\
+- auction_qr_codeï¼ƒ¨cmd=2ï¼ƒ©ã€company_qr_codeï¼ƒ¨cmd=1ï¼ƒ©FormData éƒ¹ƒ¤åƒªƒ€ privacy_consent\
+- version.js bump random èƒƒ¬ä»¥æƒ»´æƒ¶° SVN çƒ©ƒ¨èƒ¹ƒ¿ keyword\
+- svn:ignore æƒ¶°åƒ‚ƒ¾ docs"
+: 1780910410:0;svn st
+: 1780910415:0;svn commit -m "feat: #2581 enc API ä¸ƒªå‚³åƒ‚ƒ¾åƒªƒ€ privacy_consent æ¬ƒ¤ä½ƒ­\
+\
+- utility.js æƒ¶°åƒ‚ƒ¾ readPrivacyConsentFromFileã€buildPrivacyConsentEncData\
+- auction_qr_codeï¼ƒ¨cmd=2ï¼ƒ©ã€company_qr_codeï¼ƒ¨cmd=1ï¼ƒ©FormData éƒ¹ƒ¤åƒªƒ€ privacy_consent\
+- version.js bump random èƒƒ¬ä»¥æƒ»´æƒ¶° SVN çƒ©ƒ¨èƒ¹ƒ¿ keyword\
+- svn:ignore æƒ¶°åƒ‚ƒ¾ docs"
+: 1780910428:0;svn st
+: 1780910429:0;svn up
+: 1780910432:0;svn commit -m "feat: #2581 enc API ä¸ƒªå‚³åƒ‚ƒ¾åƒªƒ€ privacy_consent æ¬ƒ¤ä½ƒ­\
+\
+- utility.js æƒ¶°åƒ‚ƒ¾ readPrivacyConsentFromFileã€buildPrivacyConsentEncData\
+- auction_qr_codeï¼ƒ¨cmd=2ï¼ƒ©ã€company_qr_codeï¼ƒ¨cmd=1ï¼ƒ©FormData éƒ¹ƒ¤åƒªƒ€ privacy_consent\
+- version.js bump random èƒƒ¬ä»¥æƒ»´æƒ¶° SVN çƒ©ƒ¨èƒ¹ƒ¿ keyword\
+- svn:ignore æƒ¶°åƒ‚ƒ¾ docs"
+: 1780910439:0;svn st
+: 1780910443:0;svn log | less
+: 1780975806:0;svn up
+: 1781772821:0;git status
+: 1781772829:0;tree .cursor
+: 1781773573:0;git status
+: 1781773909:0;git ls-remote o
+: 1781773910:0;git ls-remote origin
+: 1781773945:0;git fetch origin
+: 1781773951:0;git push origin main
+: 1781773956:0;git ls-remote origin
+: 1781773978:0;cd .git
+: 1781773978:0;ls
+: 1781773981:0;cd hooks
+: 1781773981:0;ls
+: 1781773987:0;cat pre-commit
+: 1781773994:0;ls 
+: 1781773998:0;ls | grep -v .sample
+: 1781774006:0;ls | grep -v .sample | xargs cat
+: 1781774021:0;ls | grep -v .sample | xargs echo $1
+: 1781774070:0;ls | grep -v .sample | xargs mv $1,{.bak}
+: 1781774087:0;ls | grep -v .sample
+: 1781774095:0;ls | grep -v .sample | xargs mv $1{,.bak}
+: 1781774099:0;ls | grep -v .sample
+: 1781774110:0;mv post-commit post-commit.logseq
+: 1781774121:0;mv pre-commit{,.logseq}
+: 1781774126:0;ls *.logseq
+: 1781774129:0;git status
+: 1781774134:0;cd ../..
+: 1781774135:0;ls
+: 1781774136:0;gti status
+: 1781774138:0;git status
+: 1781774491:0;git add .
+: 1781774500:0;git commit -m 'update .cursor rules'
+: 1781774501:0;git log
+: 1781774612:0;git rebase -i
+: 1781774619:0;git log
+: 1781774635:0;git rebase -i 325cd
+: 1781774705:0;git log
+: 1781774802:0;git status
+: 1781774805:0;git log
+: 1781774820:0;git status
+: 1781774823:0;git push'\
+'
+: 1781774825:0;git push\
+'
+: 1781774829:0;git push
+: 1781774946:0;# æƒ®¨é€é·ç§»å·¥ä½ƒ¼åƒ¨ƒ¦æƒ´¯ï¼ƒ¨ä¸»è¦ï¼ƒ©\
+git push -u origin migrate/obsidian\
+\
+# å»ºè­°ä¸€ä½µæƒ®¨é€åƒ§ƒ­çµƒ°åƒ¨ƒ¦æƒ´¯ï¼ƒ¨å‚ƒ¹ä»½å°ƒ­çƒ¥§çƒ´¨ï¼ƒ©\
+git push -u origin archive/logseq
+: 1781775656:0;git status
+: 1781775660:0;git add .
+: 1781775668:0;git commit -m 'update .gitignore'
+: 1781775672:0;git push
+: 1782094072:0;git status
+: 1782096864:0;rm æƒ¼ªåƒ±½åƒ°ƒ­*.base
+: 1782096865:0;ls
+: 1782096869:0;rm 2026-06-22.md
+: 1782096869:0;ls
+: 1782096873:0;git status
+: 1782096950:0;ls
+: 1782096963:0;rm æƒ¼ªåƒ±½åƒ°ƒ­.base 
+: 1782096963:0;ls
+: 1782097043:0;git status
+: 1782097053:0;rm .obsidian/ -r
+: 1782097055:0;git status
+: 1782097615:0;git add .
+: 1782097650:0;git commit -m 'docs: é·å¾ƒ¹ä»»åƒ«ƒ¹èƒ¨ƒ§ä»»åƒ«ƒ¹é€²åº¦'
+: 1782097651:0;git status
+: 1782097652:0;git push
+: 1782097769:0;git status
+: 1782101511:0;git diff journals/
+: 1782101529:0;git diff journals/2025_01_09.md
+: 1782101537:0;git status journals/2025_01_09.md
+: 1782101679:0;git status
+: 1782101681:0;git status| less
+: 1782108966:0;git status
+: 1782108967:0;git add .
+: 1782108985:0;git commit -m 'ç­ƒ¦è¨ƒ¸è½ƒ©æƒ¯ƒ»æƒ¯ƒ°äº¤'
+: 1782108987:0;git status
+: 1782108989:0;git puish
+: 1782108990:0;git push
+: 1782109405:0;git status
+: 1782109420:0;rm æƒ¼ªåƒ±½åƒ°ƒ­*.canvas
+: 1782109422:0;git status
+: 1782109440:0;rm æƒ¼ªåƒ±½åƒ°ƒ­.base 
+: 1782109442:0;rm æƒ¼ªåƒ±½åƒ°ƒ­\ 1.base
+: 1782109444:0;kls
+: 1782109445:0;ls
+: 1782109447:0;git status
+: 1782109468:0;rm journals/2026-06-22.md
+: 1782109469:0;git status
+: 1782109470:0;git add .
+: 1782109486:0;git commit -m 'fix: tags format'
+: 1782109490:0;git status
+: 1782109493:0;git push
+: 1782109497:0;git status
+: 1782109504:0;git checkout main
+: 1782109506:0;git pull
+: 1782109509:0;git status
+: 1782109516:0;git log
+: 1782110770:0;git status
+: 1782110988:0;git log
+: 1782111119:0;git status
+: 1782113286:0;ls canvas
+: 1782113287:0;git status
+: 1782194792:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1782720594:0;git status
+: 1782720596:0;git add .
+: 1782720599:0;git status
+: 1782720636:0;git commit -m 'æƒ¶°åƒ‚ƒ¾ç­ƒ¦è¨ƒ¸èƒ¨ƒ§agentåƒ­ƒ´ä½ƒ¼çƒºƒ¤çµƒ°æ§ƒ«èƒ¨ƒ§æƒ¶ƒ§ä»¶'
+: 1782720638:0;git status
+: 1782720639:0;git push
+: 1782721750:0;ssh pve7.lan
+: 1782723103:0;svn diff
+: 1782723107:0;git status
+: 1782723173:0;git add .
+: 1782723193:0;git commit -m 'add cursor skills for pve access)\
+'
+: 1782723195:0;git status
+: 1782723196:0;git push
+: 1782726218:0;git status
+: 1782727013:0;git dff
+: 1782727015:0;git diff
+: 1782727040:0;git commit -am 'obsidian json'
+: 1782727042:0;git push
+: 1782791047:0;git diff
+: 1782791658:0;git status
+: 1782800956:0;git fetch
+: 1782800959:0;git log
+: 1782803816:0;ssh pve7.lan
+: 1782806507:0;git status
+: 1782807829:0;ssh pve7.lan
+: 1782811884:0;git status
+: 1782811892:0;git log | less
+: 1782811897:0;git log | fzf --preview
+: 1782811905:0;git log | fzf 
+: 1782811912:0;git log | less
+: 1782811940:0;git status
+: 1782811941:0;git add .
+: 1782811943:0;git status
+: 1782811960:0;git reset
+: 1782811962:0;git status

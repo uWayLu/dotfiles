@@ -1,0 +1,2 @@
+#!/usr/bin/zsh
+exec proxychains4 -f "${XDG_CONFIG_HOME:-$HOME/.config}/proxychains/k232.conf" "$@"

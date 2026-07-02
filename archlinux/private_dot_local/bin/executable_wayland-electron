@@ -1,0 +1,7 @@
+#!/usr/bin/zsh
+/usr/bin/${0##*/} \
+	--ozone-platform=wayland \
+	--enable-features=UseOzonePlatform \
+	--enable-wayland-ime \
+	--password-store=detect \
+	"$@"

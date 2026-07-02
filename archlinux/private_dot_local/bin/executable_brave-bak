@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+/usr/bin/brave \
+	--enable-features=UseOzonePlatform \
+	--ozone-platform=wayland \
+	--enable-wayland-ime \
+	--password-store=detect \
+	"$@"
+

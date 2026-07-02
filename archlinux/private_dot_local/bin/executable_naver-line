@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+wineuserpath=$HOME/.wine/drive_c/users/${USER}
+linepath="AppData/Local/LINE/bin/current"
+exe=LineLauncher.exe
+export "LC_ALL=zh_TW.UTF-8"
+
+wine $wineuserpath/$linepath/$exe 
+

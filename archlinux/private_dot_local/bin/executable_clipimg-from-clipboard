@@ -1,0 +1,130 @@
+#!/usr/bin/env python3
+"""Save the system clipboard image as PNG under ~/Pictures/_clipboard."""
+
+from __future__ import annotations
+
+import subprocess
+import sys
+from datetime import datetime
+from io import BytesIO
+from pathlib import Path
+from typing import Protocol
+
+DEST_DIR = Path.home() / "Pictures" / "_clipboard"
+PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
+
+
+class ClipboardReader(Protocol):
+    def get_available_mime_types_for_paste(self) -> tuple[str, ...]: ...
+    def get_mime_data(self, mime: str) -> bytes: ...
+
+
+def run_clipboard(args: list[str]) -> subprocess.CompletedProcess[bytes]:
+    return subprocess.run(
+        ["kitty", "+kitten", "clipboard", *args],
+        capture_output=True,
+    )
+
+
+def list_mime_types_via_kitty() -> list[str]:
+    proc = run_clipboard(["-g", "-m", ".", "/dev/stdout"])
+    if proc.returncode != 0:
+        err = proc.stderr.decode("utf-8", "replace").strip()
+        if err:
+            print(err, file=sys.stderr)
+        return []
+    return [
+        line.strip()
+        for line in proc.stdout.decode("utf-8", "replace").splitlines()
+        if line.strip()
+    ]
+
+
+def has_image(mimes: list[str] | tuple[str, ...]) -> bool:
+    return any(mime.lower().startswith("image/") for mime in mimes)
+
+
+def pick_image_mime(mimes: list[str] | tuple[str, ...]) -> str | None:
+    image_mimes = [mime for mime in mimes if mime.lower().startswith("image/")]
+    if not image_mimes:
+        return None
+    for preferred in ("image/png", "image/jpeg", "image/webp", "image/bmp", "image/gif"):
+        if preferred in image_mimes:
+            return preferred
+    return image_mimes[0]
+
+
+def is_valid_png(path: Path) -> bool:
+    if not path.is_file() or path.stat().st_size == 0:
+        return False
+    with path.open("rb") as fh:
+        return fh.read(len(PNG_MAGIC)) == PNG_MAGIC
+
+
+def make_output_path(dest_dir: Path = DEST_DIR) -> Path:
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    return dest_dir / f"clip-{datetime.now().strftime('%Y%m%d-%H%M%S')}.png"
+
+
+def image_bytes_to_png(data: bytes) -> bytes:
+    if data.startswith(PNG_MAGIC):
+        return data
+    from PIL import Image
+
+    with Image.open(BytesIO(data)) as img:
+        converted = img.convert("RGBA") if img.mode in ("P", "LA") else img.convert("RGB")
+        out = BytesIO()
+        converted.save(out, format="PNG")
+        return out.getvalue()
+
+
+def write_png(data: bytes, dest_dir: Path = DEST_DIR) -> Path:
+    outfile = make_output_path(dest_dir)
+    png_data = image_bytes_to_png(data)
+    outfile.write_bytes(png_data)
+    if not is_valid_png(outfile):
+        outfile.unlink(missing_ok=True)
+        raise ValueError("failed to write valid PNG")
+    return outfile
+
+
+def save_clipboard_image_from_boss(clipboard: ClipboardReader, dest_dir: Path = DEST_DIR) -> Path:
+    mime = pick_image_mime(clipboard.get_available_mime_types_for_paste())
+    if mime is None:
+        raise ValueError("no image in clipboard")
+    data = clipboard.get_mime_data(mime)
+    if not data:
+        raise ValueError("clipboard image payload is empty")
+    return write_png(data, dest_dir)
+
+
+def save_clipboard_image_via_kitty(dest_dir: Path = DEST_DIR) -> Path:
+    mimes = list_mime_types_via_kitty()
+    if not has_image(mimes):
+        raise ValueError("no image in clipboard")
+
+    outfile = make_output_path(dest_dir)
+    proc = run_clipboard(["-g", str(outfile)])
+    if proc.returncode != 0:
+        err = proc.stderr.decode("utf-8", "replace").strip()
+        outfile.unlink(missing_ok=True)
+        raise RuntimeError(err or "kitty clipboard failed")
+
+    if not is_valid_png(outfile):
+        outfile.unlink(missing_ok=True)
+        raise ValueError("kitty clipboard did not produce a valid PNG")
+    return outfile
+
+
+def main() -> int:
+    try:
+        path = save_clipboard_image_via_kitty()
+    except Exception as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+    print(path)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

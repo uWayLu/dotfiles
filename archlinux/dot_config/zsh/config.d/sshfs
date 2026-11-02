@@ -1,0 +1,175 @@
+# 掛載 SSHFS: 執行 sfs [關鍵字]
+# 預設將相對路徑掛載於 SSHFS_BASE_DIR ($HOME/Workspace/sshfs) 下，確保在任何目錄執行皆能統一管理掛載點。
+sfs() {
+  local cmd
+  for cmd in fzf sshfs findmnt mountpoint; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+      echo "[ERR] 缺少必要指令: $cmd" >&2
+      return 1
+    fi
+  done
+
+  local base_dir="${SSHFS_BASE_DIR:-$HOME/Workspace/sshfs}"
+  local common_opts=(
+    -F "$HOME/.ssh/config"
+    -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3
+  )
+
+  # 格式: [識別名稱]='遠端主機:遠端路徑 本地掛載路徑 [額外專屬參數...]'
+  # 本地掛載路徑若為 ./ 開頭或相對名稱，將自動對應至 $base_dir 下
+  typeset -A profiles=(
+    [esign.htdocs]='esign:/opt/lampp/htdocs/ ./esign -o ro -o sftp_server="sudo /usr/lib/openssh/sftp-server"'
+    [officeweb]='officeweb:/ ./officeweb -o ro'
+    [az-proxy]='az-proxy:/ ./az-proxy -o ro'
+    [k242]='k242:/opt/lampp/htdocs/ ./k242 -o ro -o sftp_server="sudo /usr/lib/openssh/sftp-server"'
+    [cbid.htdocs]='cbid:/opt/lampp/htdocs/ ./cbid -o ro -o sftp_server="sudo /usr/lib/openssh/sftp-server"'
+    [july.htdocs]='july:/opt/lampp/htdocs/ ./july -o sftp_server="sudo /usr/lib/openssh/sftp-server"'
+    [caddy2026]='root@192.168.1.218:/etc/caddy ./caddy2026 -o sftp_server="sudo /usr/lib/openssh/sftp-server"'
+    [win_d]='wsl:/mnt/d/ ./win_d'
+  )
+
+  # 組裝 fzf 選單列表，預先將相對路徑與 ~ 展開為實際絕對路徑，以供預覽與執行使用
+  local list="" k raw_entry mnt_raw mnt_resolved
+  local -a parsed_tmp
+  for k in "${(@ko)profiles}"; do
+    raw_entry="${profiles[$k]}"
+    parsed_tmp=( ${(Q)${(z)raw_entry}} )
+    mnt_raw="${parsed_tmp[2]}"
+
+    if [[ "$mnt_raw" == \~* ]]; then
+      mnt_resolved="${mnt_raw/#\~/$HOME}"
+    elif [[ "$mnt_raw" == ./* ]]; then
+      mnt_resolved="${base_dir}/${mnt_raw#./}"
+    elif [[ "$mnt_raw" != /* ]]; then
+      mnt_resolved="${base_dir}/${mnt_raw}"
+    else
+      mnt_resolved="$mnt_raw"
+    fi
+
+    list+="$(printf "%-15s | %s\t%s\t%s" "$k" "$raw_entry" "$k" "$mnt_resolved")"$'\n'
+  done
+
+  # 啟動 fzf 互動選單，透過欄位切分避免路徑空白問題，並即時預覽掛載狀態
+  local out
+  out=$(printf "%s" "$list" | fzf \
+    --delimiter=$'\t' \
+    --with-nth="1" \
+    --query="${1:-}" \
+    --select-1 \
+    --exit-0 \
+    --expect=ctrl-e \
+    --header="Enter: 自動建目錄並掛載 | Ctrl-E: 展開指令至輸入列手動修改" \
+    --preview='
+      mnt={3}
+      echo "[目標掛載點] $mnt"
+      mountpoint -q "$mnt" 2>/dev/null && findmnt "$mnt" || echo "狀態: 尚未掛載"
+    ' \
+    --preview-window=down:4:wrap)
+
+  [[ -z "$out" ]] && return 0
+
+  # 使用 Zsh 內建陣列切分處理 fzf 輸出，取代外部 head 與 sed 呼叫
+  local -a out_lines
+  out_lines=( "${(@f)out}" )
+  local key="${out_lines[1]}"
+  local line="${out_lines[2]}"
+
+  # 若無搭配按鍵且只有單行輸出時之防呆處理
+  if [[ -z "$line" && "$key" != "ctrl-e" ]]; then
+    line="$key"
+    key=""
+  fi
+
+  local -a fields
+  fields=( "${(@ps:\t:)line}" )
+  local host="${fields[2]}"
+  local mnt="${fields[3]}"
+  local raw_args="${profiles[$host]}"
+
+  # 解析配置字串並移除外層引號，分離遠端路徑、本地掛載點與額外參數
+  local -a parsed_args extra_opts
+  parsed_args=( ${(Q)${(z)raw_args}} )
+  local remote="${parsed_args[1]}"
+  extra_opts=( "${parsed_args[@]:2}" )
+
+  if [[ -z "$remote" || -z "$mnt" ]]; then
+    echo "[ERR] 解析參數失敗，請檢查 profiles[$host] 設定格式" >&2
+    return 1
+  fi
+
+  # 按下 Ctrl-E：將展開後的完整指令推入 Zsh 輸入列供手動調整
+  if [[ "$key" == "ctrl-e" ]]; then
+    local extra_raw="${${(z)raw_args}[@]:2}"
+    print -z "mkdir -p ${(q)mnt} && sshfs ${common_opts[*]} ${(q)remote} ${(q)mnt}${extra_raw:+ $extra_raw}"
+    return 0
+  fi
+
+  # 按下 Enter：檢查是否已掛載，若未掛載則自動建立目錄並執行 sshfs
+  if mountpoint -q "$mnt" 2>/dev/null; then
+    echo "[SKIP] $mnt 已經處於掛載狀態"
+    return 0
+  fi
+
+  mkdir -p "$mnt" && \
+  sshfs "${common_opts[@]}" "$remote" "$mnt" "${extra_opts[@]}" && \
+  echo "[OK] 已掛載 $remote -> $mnt"
+}
+
+# 卸載 SSHFS: 執行 usfs [關鍵字] (支援 Tab 多選)
+# 自動偵測系統目前已掛載的 fuse.sshfs 項目，卸載成功後清理空目錄
+usfs() {
+  local raw_mounts
+  raw_mounts=$(findmnt -rn -t fuse.sshfs -o TARGET,SOURCE 2>/dev/null)
+
+  if [[ -z "$raw_mounts" ]]; then
+    echo "[INFO] 目前沒有已掛載的 SSHFS"
+    return 0
+  fi
+
+  # 將 findmnt 輸出的第一欄與第二欄轉為 Tab 分隔，並還原空白字元編碼
+  local formatted_list="" m_line m_target m_source
+  for m_line in "${(@f)raw_mounts}"; do
+    m_target="${m_line%% *}"
+    m_source="${m_line#* }"
+    m_target="${m_target//\\x20/ }"
+    formatted_list+="${m_target}"$'\t'"${m_source}"$'\n'
+  done
+
+  local mounts
+  mounts=$(printf "%s" "$formatted_list" | \
+    fzf -m \
+        --delimiter=$'\t' \
+        --query="${1:-}" \
+        --select-1 \
+        --exit-0 \
+        --header="選擇要卸載的 SSHFS (Tab 多選 / Enter 執行)")
+
+  [[ -z "$mounts" ]] && return 0
+
+  # 決定可用的卸載工具，優先使用 fusermount3，次選 fusermount 或 umount
+  local -a umount_cmd
+  local lazy_hint
+  if command -v fusermount3 >/dev/null 2>&1; then
+    umount_cmd=( fusermount3 -u )
+    lazy_hint="fusermount3 -uz"
+  elif command -v fusermount >/dev/null 2>&1; then
+    umount_cmd=( fusermount -u )
+    lazy_hint="fusermount -uz"
+  else
+    umount_cmd=( umount )
+    lazy_hint="umount -l"
+  fi
+
+  # 逐一卸載選取的目標，並在掛載資料夾為空時自動清理
+  local line target
+  for line in "${(@f)mounts}"; do
+    target="${line%%$'\t'*}"
+    [[ -z "$target" ]] && continue
+    if "${umount_cmd[@]}" "$target"; then
+      echo "[OK] 已卸載 $target"
+      rmdir "$target" 2>/dev/null
+    else
+      echo "[ERR] 卸載失敗: $target (若被佔用可改用 $lazy_hint)" >&2
+    fi
+  done
+}

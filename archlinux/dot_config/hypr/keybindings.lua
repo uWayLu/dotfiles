@@ -142,11 +142,18 @@ hl.bind("Super+Ctrl+Alt + Right", hl.dsp.window.move({ workspace = "r+1" }))
 hl.bind("Super+Ctrl+Alt + Left", hl.dsp.window.move({ workspace = "r-1" }))
 
 -- Move active window around current workspace with mainMod + SHIFT + CTRL [←→↑↓]
-local moveactivewindow = "grep -q \"true\" <<< $(hyprctl activewindow -j | jq -r .floating) && hyprctl dispatch moveactive"
-hl.bind("Super + Shift + Control + left", hl.dsp.exec_cmd(moveactivewindow .. " -30 0 || hyprctl dispatch movewindow l"), { repeating = true, description = "Move activewindow to the right" })
-hl.bind("Super + Shift + Control + right", hl.dsp.exec_cmd(moveactivewindow .. " 30 0 || hyprctl dispatch movewindow r"), { repeating = true, description = "Move activewindow to the right" })
-hl.bind("Super + Shift + Control + up", hl.dsp.exec_cmd(moveactivewindow .. "  0 -30 || hyprctl dispatch movewindow u"), { repeating = true, description = "Move activewindow to the right" })
-hl.bind("Super + Shift + Control + down", hl.dsp.exec_cmd(moveactivewindow .. " 0 30 || hyprctl dispatch movewindow d"), { repeating = true, description = "Move activewindow to the right" })
+local function move_active_window(dir, dx, dy)
+    local win = hl.get_active_window()
+    if win and win.floating then
+        hl.dispatch(hl.dsp.window.move({ x = dx, y = dy, relative = true }))
+    else
+        hl.dispatch(hl.dsp.window.move({ direction = dir }))
+    end
+end
+hl.bind("Super + Shift + Control + left", function() move_active_window("l", -30, 0) end, { repeating = true, description = "Move active window left" })
+hl.bind("Super + Shift + Control + right", function() move_active_window("r", 30, 0) end, { repeating = true, description = "Move active window right" })
+hl.bind("Super + Shift + Control + up", function() move_active_window("u", 0, -30) end, { repeating = true, description = "Move active window up" })
+hl.bind("Super + Shift + Control + down", function() move_active_window("d", 0, 30) end, { repeating = true, description = "Move active window down" })
 
 -- Scroll through existing workspaces
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

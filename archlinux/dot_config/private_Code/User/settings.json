@@ -8,7 +8,7 @@
   "security.workspace.trust.enabled": false,
   "editor.minimap.side": "right",
   "editor.fontFamily": "'Maple Mono', 'Fira Code', 'monospace', monospace",
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "workbench.statusBar.visible": true,
   "terminal.external.linuxExec": "kitty",
   "terminal.explorerKind": "both",
@@ -47,5 +47,6 @@
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.editor.enablePreview": false
 }

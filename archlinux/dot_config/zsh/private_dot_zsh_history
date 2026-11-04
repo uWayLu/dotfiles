@@ -539,7 +539,7 @@ git push -u origin main
 : 1754904365:0;svn info
 : 1754967300:0;svn st
 : 1754981228:0;npm run webb
-: 0:0;
+: 1784167692:0;
 : 1754985535:0;svn log
 : 1754985537:0;svn log 
 : 1754985539:0;svn log  | less
@@ -1506,3 +1506,72 @@ git push -u origin archive/logseq
 : 1782811943:0;git status
 : 1782811960:0;git reset
 : 1782811962:0;git status
+: 1782883771:0;git pull
+: 1782883774:0;git status
+: 1783482770:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1783483581:0;npm run webb
+: 1783485611:0;source /usr/share/cursor/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+: 1783487542:0;npm run webb
+: 1783489317:0;svn st
+: 1783489319:0;svn diff
+: 1783489365:0;npm run webb
+: 1783489414:0;ls js/setting.js
+: 1783489415:0;ls js/setting.js -al
+: 1783489428:0;cd tmp/settings
+: 1783489428:0;ls
+: 1783489574:0;cd ../
+: 1783489576:0;cd ../js
+: 1783489577:0;ls
+: 1783489580:0;rm setting
+: 1783489583:0;rm setting.js
+: 1783489600:0;ln -s ../tmp/settings/setting.1150205.eval.js setting.js
+: 1783489606:0;npm run dev
+: 1783489608:0;npm run webb
+: 1783492706:0;xdg-open ~/Documents/mantis/m2616-æƒ¶ƒ§ä»¶çƒ´ƒ‚çƒ´ƒ¿åƒ¹¨-1150205-æ¨ƒ¹å°æ¨ƒ¹ç¤º/output/æƒµ¸ä½ƒ­çƒ¹¼å±ƒµéƒ£¨æƒµ¸ä½ƒ­çƒ´ƒ‚æ¥­ç½²è»ƒ¿é«ƒ´æƒ®ƒè³¼è¾¦åƒ¥¬å®¤æ¨ƒ¹åƒ¶®åƒ¨ƒ·åƒ­°ç³»çµ±\ -\ æ¨ƒ¹å°æ¨ƒ¹ç¤ºåƒ¶®.pdf
+: 1783932000:0;svn up; svn info
+: 1783933442:0;npm run webb
+: 1783936020:0;git status
+: 1783936022:0;svn st
+: 1783996213:0;npm run webb
+: 1784000225:0;git status
+: 1784011463:0;pwd
+: 1784097947:0;svn up
+: 1784097950:0;svn st
+: 1784099464:0;svn diff
+: 1784099467:0;svn st
+: 1784099471:0;svn revert app/Services/RepeatItemRowService.php 
+: 1784099471:0;svn st
+: 1785304622:0;ls docs
+: 1785304630:0;svns 
+: 1785304632:0;svn st
+: 1785305435:0;ls
+: 1785305506:0;svn st
+: 1785305509:0;npm run webb
+: 1785306007:0;svn st
+: 1785306017:0;svn up
+: 1785306022:0;svn log | less
+: 1785394050:0;svn log 
+: 1785394053:0;svn log  | less
+: 1785398328:0;npm run webb
+: 1785398665:0;svn diff
+: 1785398940:0;svn st
+: 1785399213:0;svn up
+: 1785399214:0;svn st
+: 1787126515:0;svn up
+: 1787126869:0;rg æƒªƒµæ¨ƒ¹å»ƒ€åƒµƒ¦åƒ€±åƒ£¹åƒ¶®<
+: 1787126870:0;rg æƒªƒµæ¨ƒ¹å»ƒ€åƒµƒ¦åƒ€±åƒ£¹åƒ¶®
+: 1787126881:0;cd ../spo_printer5
+: 1787126886:0;rg æƒªƒµæ¨ƒ¹å»ƒ€åƒµƒ¦åƒ€±åƒ£¹åƒ¶®
+: 1787126894:0;svn st
+: 1787126896:0;git status
+: 1787126898:0;svn st
+: 1787126901:0;svn info
+: 1787126904:0;svn up
+: 1787126908:0;git status
+: 1787126911:0;rg æƒªƒµæ¨ƒ¹å»ƒ€åƒµƒ¦åƒ€±åƒ£¹åƒ¶®
+: 1790147746:0;svn up
+: 1790149658:0;svn st
+: 1790149660:0;svn diff
+: 1792142394:0;svn st
+: 1792402855:0;cat config/version.php
+: 1792402860:0;svn st

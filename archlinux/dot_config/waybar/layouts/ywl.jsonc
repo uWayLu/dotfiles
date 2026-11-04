@@ -101,7 +101,7 @@
     },
 
     "clock": {
-	"format": "{:%R <U+F00ED> %Y·%m·%d}",
+	"format": "{:%R 󰃭 %Y·%m·%d}",
         "rotate": 0,
         "tooltip-format": "<span>{calendar}</span>",
         "calendar": {

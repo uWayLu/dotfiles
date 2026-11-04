@@ -17,7 +17,14 @@ local browser = "firefox"
 
 -- Window/Session actions
 hl.bind("Super+Shift + P", hl.dsp.exec_cmd("hyprpicker -a"), { description = "Color Picker" })
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("/home/ywl/.local/share/bin/dontkillsteam.sh"))
+hl.bind(mainMod .. " + Q", function()
+    local win = hl.get_active_window()
+    if win and win.class == "Steam" then
+        hl.exec_cmd("xdotool windowunmap $(xdotool getactivewindow)")
+    else
+        hl.dispatch(hl.dsp.window.close())
+    end
+end)
 --bind = Alt, F4, exec, /home/ywl/.local/share/bin/dontkillsteam.sh # close focused window
 hl.bind(mainMod .. " + Delete", hl.dsp.exit())
 hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))

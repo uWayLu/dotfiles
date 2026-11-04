@@ -1,5 +1,5 @@
 local mainMod = "Super"
-local menu = "[movefocus] rofi -show combi -modes combi -combi-modes run,ssh -run-command 'hyprctl dispatch \\'hl.dsp.exec_cmd(\"{cmd}\")\\''"
+local menu = "pkill -x rofi || rofi -show combi -modes combi -combi-modes run,ssh"
 local terminal = "kitty"
 
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
